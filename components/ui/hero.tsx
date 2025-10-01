@@ -176,7 +176,18 @@ export default function ShaderShowcase() {
             Start vandaag
           </a>
         </div>
-      </header>
+        </header>
+
+      {/* Hero Image - Rechts in het midden */}
+      <div className="absolute right-48 top-1/2 transform -translate-y-1/2 z-20">
+        <div className="w-[550px] h-[550px] rounded-2xl overflow-hidden shadow-2xl">
+          <img 
+            src="/hero image.png" 
+            alt="CoPrivat Hero Image" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
 
       <main className="absolute bottom-8 left-8 z-20 max-w-2xl">
         <div className="text-left">
