@@ -33,9 +33,8 @@ const Hero = () => {
 
             {/* Subtitle */}
             <p className="text-xl sm:text-2xl text-blue-50 mb-8 leading-relaxed max-w-3xl mx-auto">
-              CoPrivat gebruikt AI om inkomende post automatisch te verwerken, 
-              te classificeren en aan het juiste patiëntendossier te koppelen. 
-              Bespaar uren per week en verhoog de efficiëntie van uw praktijk.
+              We bouwen momenteel actief aan ons product en betrekken huisartsen in het proces, 
+              zodat onze oplossing perfect aansluit op de praktijk.
             </p>
 
             {/* CTA Buttons */}

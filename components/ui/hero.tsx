@@ -83,14 +83,11 @@ export default function ShaderShowcase() {
         className="absolute inset-0 w-full h-full"
         colors={["#1e40af", "#2563eb", "#3b82f6", "#60a5fa", "#ffffff"]}
         speed={0.3}
-        backgroundColor="#1e40af"
       />
       <MeshGradient
         className="absolute inset-0 w-full h-full opacity-60"
         colors={["#1e3a8a", "#ffffff", "#3b82f6", "#93c5fd"]}
         speed={0.2}
-        wireframe="true"
-        backgroundColor="transparent"
       />
 
       <header className="relative z-20 flex items-center justify-between p-6">
@@ -100,7 +97,7 @@ export default function ShaderShowcase() {
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           <motion.div
-            className="w-10 h-10 bg-white rounded-xl flex items-center justify-center group-hover:drop-shadow-lg transition-all duration-300"
+            className="w-12 h-12 rounded-xl overflow-hidden group-hover:drop-shadow-lg transition-all duration-300"
             style={{
               filter: "url(#logo-glow)",
             }}
@@ -113,7 +110,11 @@ export default function ShaderShowcase() {
               },
             }}
           >
-            <span className="text-blue-600 font-bold text-xl">C</span>
+            <img 
+              src="/logo-coprivat.png" 
+              alt="CoPrivat Logo" 
+              className="w-full h-full object-cover"
+            />
           </motion.div>
 
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
@@ -230,7 +231,7 @@ export default function ShaderShowcase() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            CoPrivat gebruikt AI om inkomende post automatisch te verwerken, te classificeren en aan het juiste patiëntendossier te koppelen. Bespaar 90% tijd en verhoog de efficiëntie.
+            We bouwen momenteel actief aan ons product en betrekken huisartsen in het proces, zodat onze oplossing perfect aansluit op de praktijk.
           </motion.p>
 
           <motion.div
@@ -253,7 +254,7 @@ export default function ShaderShowcase() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Start vandaag - Gratis proefperiode
+              Join de wachtlijst
             </motion.a>
           </motion.div>
         </div>
@@ -269,7 +270,6 @@ export default function ShaderShowcase() {
             thickness={0.1}
             softness={0.2}
             intensity={5}
-            spotsPerColor={5}
             spotSize={0.1}
             pulse={0.1}
             smoke={0.5}
