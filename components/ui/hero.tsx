@@ -1,11 +1,16 @@
 "use client"
 import { useEffect, useRef, useState } from "react"
 import { MeshGradient, PulsingBorder } from "@paper-design/shaders-react"
-import { motion } from "framer-motion"
+import { motion, useIsomorphicLayoutEffect } from "framer-motion"
 
 export default function ShaderShowcase() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isActive, setIsActive] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleMouseEnter = () => setIsActive(true)
@@ -93,21 +98,13 @@ export default function ShaderShowcase() {
       <header className="relative z-20 flex items-center justify-between p-6">
         <motion.div
           className="flex items-center group cursor-pointer"
-          whileHover={{ scale: 1.05 }}
+          whileHover={isMounted ? { scale: 1.05 } : {}}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <motion.div
+          <div
             className="w-12 h-12 rounded-xl overflow-hidden group-hover:drop-shadow-lg transition-all duration-300"
             style={{
               filter: "url(#logo-glow)",
-            }}
-            whileHover={{
-              scale: 1.1,
-              rotate: [0, -2, 2, 0],
-              transition: {
-                scale: { duration: 0.3 },
-                rotate: { duration: 0.6, ease: "easeInOut" },
-              },
             }}
           >
             <img 
@@ -115,10 +112,10 @@ export default function ShaderShowcase() {
               alt="CoPrivat Logo" 
               className="w-full h-full object-cover"
             />
-          </motion.div>
+          </div>
 
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            {[...Array(6)].map((_, i) => (
+            {isMounted && [...Array(6)].map((_, i) => (
               <motion.div
                 key={i}
                 className="absolute w-1 h-1 bg-white/60 rounded-full"
