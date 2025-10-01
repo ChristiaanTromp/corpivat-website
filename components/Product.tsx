@@ -107,7 +107,7 @@ const Product = () => {
       title: "Output wordt gegenereerd",
       description: "De AI geeft de bijhorende output die nodig is voor het type post",
       icon: (
-        <svg className="w-8 h-8 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
@@ -119,17 +119,17 @@ const Product = () => {
       description: "De out wordt voorgelegd aan de huisarts voor controle",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{
-          animation: 'drawCheck 2s ease-in-out infinite'
+          animation: 'drawCheck 4s ease-in-out infinite'
         }}>
           <circle cx="12" cy="12" r="10" stroke="#10b981" strokeWidth="2" fill="none" style={{
             strokeDasharray: '62.83',
             strokeDashoffset: '62.83',
-            animation: 'drawCircle 2s ease-in-out infinite'
+            animation: 'drawCircle 4s ease-in-out infinite'
           }} />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12l2 2 4-4" stroke="#10b981" fill="none" style={{
             strokeDasharray: '10',
             strokeDashoffset: '10',
-            animation: 'drawCheck 2s ease-in-out infinite'
+            animation: 'drawCheck 4s ease-in-out infinite'
           }} />
         </svg>
       )
@@ -139,15 +139,9 @@ const Product = () => {
       title: "Handmatig verwerken",
       description: "Complexe gevallen worden voorgelegd aan uw team voor controle",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{
-          animation: 'handWave 1.5s ease-in-out infinite'
-        }}>
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V9a1.5 1.5 0 013 0v1.5m-3 0V9a1.5 1.5 0 013 0v1.5m0 0V14m0-2.5v-6a1.5 1.5 0 013 0v6" 
-          stroke="#3b82f6" 
-          style={{
-            transformOrigin: 'center',
-            animation: 'handWave 1.5s ease-in-out infinite'
-          }} />
+          stroke="#3b82f6" />
         </svg>
       )
     }
@@ -197,14 +191,6 @@ const Product = () => {
                     </div>
                   </div>
 
-                  {/* Arrow (except for last step) */}
-                  {index < steps.length - 1 && (
-                    <div className="hidden lg:block flex-shrink-0">
-                      <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
