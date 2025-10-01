@@ -182,15 +182,8 @@ export default function ShaderShowcase() {
       <div className="absolute right-48 top-1/2 transform -translate-y-1/2 z-20">
         <motion.div 
           className="w-[550px] h-[550px] rounded-2xl overflow-hidden shadow-2xl"
-          whileHover={{
-            scale: 1.05,
-            transition: {
-              scale: { duration: 0.3 },
-            },
-          }}
-          whileTap={{
-            scale: 0.95,
-            transition: { duration: 0.1 }
+          style={{
+            transition: 'transform 0.8s ease-out'
           }}
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
@@ -202,10 +195,10 @@ export default function ShaderShowcase() {
             const rotateX = (mouseY / rect.height) * 10;
             const rotateY = (mouseX / rect.width) * 10;
             
-            e.currentTarget.style.transform = `perspective(1000px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+            e.currentTarget.style.transform = `perspective(1000px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+            e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
           }}
         >
           <img 
