@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import ShaderHero from '../components/ui/hero';
+import AdminLoad from '../components/AdminLoad';
 import ProblemSolution from '../components/ProblemSolution';
 import Product from '../components/Product';
 import Team from '../components/Team';
@@ -55,6 +56,7 @@ export default function Home() {
       <div className="min-h-screen bg-white">
         <ShaderHero />
         <main>
+          <AdminLoad />
           <ProblemSolution />
           <Product />
           <Team />
