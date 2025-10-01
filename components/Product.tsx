@@ -5,15 +5,88 @@ import React from 'react';
  * Stap-voor-stap uitleg van het proces
  */
 const Product = () => {
+  // CSS voor animaties
+  React.useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes flicker {
+        0% { 
+          color: #fbbf24; 
+          filter: drop-shadow(0 0 8px #fbbf24);
+        }
+        50% { 
+          color: #f59e0b; 
+          filter: drop-shadow(0 0 12px #f59e0b);
+        }
+        100% { 
+          color: #fbbf24; 
+          filter: drop-shadow(0 0 8px #fbbf24);
+        }
+      }
+      
+      @keyframes drawCircle {
+        0% {
+          stroke-dashoffset: 62.83;
+        }
+        50% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: 62.83;
+        }
+      }
+      
+      @keyframes drawCheck {
+        0% {
+          stroke-dashoffset: 10;
+        }
+        50% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: 10;
+        }
+      }
+      
+      @keyframes handWave {
+        0% {
+          transform: rotate(0deg) scale(1);
+        }
+        25% {
+          transform: rotate(-10deg) scale(1.05);
+        }
+        50% {
+          transform: rotate(10deg) scale(1.1);
+        }
+        75% {
+          transform: rotate(-5deg) scale(1.05);
+        }
+        100% {
+          transform: rotate(0deg) scale(1);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   const steps = [
     {
       number: 1,
       title: "Post ontvangst",
       description: "Alle digitale post wordt ontvangen en gescand",
       icon: (
-        <svg className="w-8 h-8 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
+        <div className="relative animate-bounce">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center animate-bounce">
+            7
+          </div>
+        </div>
       )
     },
     {
@@ -21,7 +94,10 @@ const Product = () => {
       title: "AI analyse",
       description: "Onze AI analyseert de inhoud en classificeert het type document",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-8 h-8 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{
+          animation: 'flicker 1.5s ease-in-out infinite alternate',
+          filter: 'drop-shadow(0 0 8px #fbbf24)'
+        }}>
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
         </svg>
       )
@@ -31,8 +107,9 @@ const Product = () => {
       title: "Output wordt gegenereerd",
       description: "De AI geeft de bijhorende output die nodig is voor het type post",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        <svg className="w-8 h-8 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
       )
     },
@@ -41,8 +118,19 @@ const Product = () => {
       title: "Menselijke controle",
       description: "De out wordt voorgelegd aan de huisarts voor controle",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{
+          animation: 'drawCheck 2s ease-in-out infinite'
+        }}>
+          <circle cx="12" cy="12" r="10" stroke="#10b981" strokeWidth="2" fill="none" style={{
+            strokeDasharray: '62.83',
+            strokeDashoffset: '62.83',
+            animation: 'drawCircle 2s ease-in-out infinite'
+          }} />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12l2 2 4-4" stroke="#10b981" fill="none" style={{
+            strokeDasharray: '10',
+            strokeDashoffset: '10',
+            animation: 'drawCheck 2s ease-in-out infinite'
+          }} />
         </svg>
       )
     },
@@ -51,8 +139,15 @@ const Product = () => {
       title: "Handmatig verwerken",
       description: "Complexe gevallen worden voorgelegd aan uw team voor controle",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{
+          animation: 'handWave 1.5s ease-in-out infinite'
+        }}>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V9a1.5 1.5 0 013 0v1.5m-3 0V9a1.5 1.5 0 013 0v1.5m0 0V14m0-2.5v-6a1.5 1.5 0 013 0v6" 
+          stroke="#3b82f6" 
+          style={{
+            transformOrigin: 'center',
+            animation: 'handWave 1.5s ease-in-out infinite'
+          }} />
         </svg>
       )
     }
