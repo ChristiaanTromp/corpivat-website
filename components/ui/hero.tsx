@@ -180,13 +180,40 @@ export default function ShaderShowcase() {
 
       {/* Hero Image - Rechts in het midden */}
       <div className="absolute right-48 top-1/2 transform -translate-y-1/2 z-20">
-        <div className="w-[550px] h-[550px] rounded-2xl overflow-hidden shadow-2xl">
+        <motion.div 
+          className="w-[550px] h-[550px] rounded-2xl overflow-hidden shadow-2xl"
+          whileHover={{
+            scale: 1.05,
+            transition: {
+              scale: { duration: 0.3 },
+            },
+          }}
+          whileTap={{
+            scale: 0.95,
+            transition: { duration: 0.1 }
+          }}
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const mouseX = e.clientX - centerX;
+            const mouseY = e.clientY - centerY;
+            
+            const rotateX = (mouseY / rect.height) * 10;
+            const rotateY = (mouseX / rect.width) * 10;
+            
+            e.currentTarget.style.transform = `perspective(1000px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+          }}
+        >
           <img 
             src="/hero image.png" 
             alt="CoPrivat Hero Image" 
             className="w-full h-full object-cover"
           />
-        </div>
+        </motion.div>
       </div>
 
       <main className="absolute bottom-8 left-8 z-20 max-w-2xl">
