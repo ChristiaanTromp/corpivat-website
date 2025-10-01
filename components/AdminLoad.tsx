@@ -29,7 +29,11 @@ const AdminLoad = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-10">
             
             {/* Post & dossierbeheer */}
-            <div className="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-500">
+            <div className="relative group">
+              {/* Blauw-witte glow effect - buiten de unit */}
+              <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+              <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+              <div className="relative bg-blue-50 rounded-xl px-8 py-5 border-l-4 border-blue-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
               <h3 className="text-xl font-semibold text-blue-800 mb-4 flex items-center">
                 <span className="text-2xl mr-3">📬</span>
                 Post & dossierbeheer
@@ -56,10 +60,15 @@ const AdminLoad = () => {
                   <span>Correspondentie met verzekeraars en verwijzingen opvolgen</span>
                 </li>
               </ul>
+              </div>
             </div>
 
             {/* Financiële administratie */}
-            <div className="bg-green-50 rounded-xl p-6 border-l-4 border-green-500">
+            <div className="relative group">
+              {/* Blauw-witte glow effect - buiten de unit */}
+              <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+              <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+              <div className="relative bg-green-50 rounded-xl px-8 py-12 border-l-4 border-green-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
               <h3 className="text-xl font-semibold text-green-800 mb-4 flex items-center">
                 <span className="text-2xl mr-3">💸</span>
                 Financiële administratie
@@ -77,11 +86,20 @@ const AdminLoad = () => {
                   <span className="text-green-500 mr-2">•</span>
                   <span>Salaris- en personeelszaken regelen</span>
                 </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">•</span>
+                  <span>Financiële rapportages opstellen</span>
+                </li>
               </ul>
+              </div>
             </div>
 
             {/* Medische verslaglegging */}
-            <div className="bg-red-50 rounded-xl p-6 border-l-4 border-red-500">
+            <div className="relative group">
+              {/* Blauw-witte glow effect - buiten de unit */}
+              <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+              <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+              <div className="relative bg-red-50 rounded-xl px-8 py-12 border-l-4 border-red-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
               <h3 className="text-xl font-semibold text-red-800 mb-4 flex items-center">
                 <span className="text-2xl mr-3">🩺</span>
                 Medische verslaglegging
@@ -99,11 +117,20 @@ const AdminLoad = () => {
                   <span className="text-red-500 mr-2">•</span>
                   <span>Verwijsbrieven en verklaringen schrijven</span>
                 </li>
+                <li className="flex items-start">
+                  <span className="text-red-500 mr-2">•</span>
+                  <span>Medische dossiers archiveren</span>
+                </li>
               </ul>
+              </div>
             </div>
 
             {/* Overige taken */}
-            <div className="bg-purple-50 rounded-xl p-6 border-l-4 border-purple-500">
+            <div className="relative group">
+              {/* Blauw-witte glow effect - buiten de unit */}
+              <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+              <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+              <div className="relative bg-purple-50 rounded-xl px-8 py-12 border-l-4 border-purple-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
               <h3 className="text-xl font-semibold text-purple-800 mb-4 flex items-center">
                 <span className="text-2xl mr-3">📊</span>
                 Overige taken
@@ -126,6 +153,7 @@ const AdminLoad = () => {
                   <span>Medicatie- en verzekeringsvragen afhandelen</span>
                 </li>
               </ul>
+              </div>
             </div>
           </div>
 
