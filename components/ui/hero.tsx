@@ -178,7 +178,7 @@ export default function ShaderShowcase() {
       {/* Hero Image - Rechts in het midden */}
       <div className="absolute right-48 top-1/2 transform -translate-y-1/2 z-20">
         <motion.div 
-          className="w-[550px] h-[550px] rounded-2xl overflow-hidden shadow-2xl"
+          className="w-[500px] h-[500px] rounded-2xl overflow-hidden shadow-2xl"
           style={{
             transition: 'transform 0.8s ease-out'
           }}
