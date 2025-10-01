@@ -18,10 +18,10 @@ const AdminLoad = () => {
           </h2>
 
           {/* Inleidende tekst */}
-          <div className="prose prose-lg max-w-none mb-10">
+          <div className="prose prose-lg max-w-none mb-10 text-center">
             <p className="text-gray-700 leading-relaxed text-lg">
               Huisartsenpraktijken hebben te maken met een steeds grotere administratieve belasting. 
-              Uit onderzoek blijkt dat veel verschillende taken tijd en aandacht vragen, zoals:
+              <br></br>Uit onderzoek blijkt dat veel verschillende taken tijd en aandacht vragen, zoals: 
             </p>
           </div>
 
@@ -137,7 +137,7 @@ const AdminLoad = () => {
               </h3>
               <p className="text-gray-700 leading-relaxed text-lg max-w-4xl mx-auto">
                 Ondanks deze brede waaier aan administratieve verplichtingen, blijkt uit onderzoeken dat 
-                <span className="font-semibold text-blue-800"> postverwerking en dossierbeheer de grootste administratieve last vormen</span>. 
+                <span className="font-semibold text-blue-800"> postverwerking de grootste administratieve last vormt</span>. 
                 Gemiddeld besteden huisartsen en hun assistenten hier ongeveer 
                 <span className="font-bold text-blue-800 text-xl"> twee uur per dag</span> aan — 
                 kostbare tijd die niet aan directe patiëntenzorg kan worden besteed.
