@@ -20,17 +20,16 @@ const Header = () => {
             <Link href="/" className="flex items-center space-x-3 group">
               <div className="relative">
                 {/* Logo met glow effect */}
-                <div className="w-12 h-12 rounded-xl overflow-hidden transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg group-hover:shadow-blue-500/50">
-                  <img 
-                    src="/logo-coprivat.png" 
-                    alt="CoPrivat Logo" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <img 
+                  src="/logo-coprivat.png" 
+                  alt="CoPrivat Logo" 
+                  className="rounded-xl shadow-lg group-hover:shadow-blue-500/50 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+                  style={{width: '60px', height: '60px'}}
+                />
                 {/* Pulsing ring effect */}
                 <div className="absolute inset-0 rounded-xl bg-blue-500/30 animate-ping opacity-0 group-hover:opacity-100"></div>
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                 CoPrivat
               </span>
             </Link>

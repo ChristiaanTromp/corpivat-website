@@ -102,15 +102,18 @@ export default function ShaderShowcase() {
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           <div
-            className="w-12 h-12 rounded-xl overflow-hidden group-hover:drop-shadow-lg transition-all duration-300"
+            className="rounded-xl overflow-hidden group-hover:drop-shadow-lg transition-all duration-300"
             style={{
               filter: "url(#logo-glow)",
+              width: '80px',
+              height: '80px'
             }}
           >
-            <img 
-              src="/logo-coprivat.png" 
-              alt="CoPrivat Logo" 
-              className="w-full h-full object-cover"
+            <img
+              src="/logo-coprivat.png"
+              alt="CoPrivat Logo"
+              className="object-cover"
+              style={{width: '80px', height: '80px'}}
             />
           </div>
 
@@ -176,9 +179,9 @@ export default function ShaderShowcase() {
         </header>
 
       {/* Hero Image - Rechts in het midden */}
-      <div className="absolute right-48 top-1/2 transform -translate-y-1/2 z-20">
-        <motion.div 
-          className="w-[500px] h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+        <div className="absolute right-48 top-1/2 transform -translate-y-1/2 z-20">
+          <motion.div 
+            className="w-[500px] h-[500px] rounded-2xl overflow-hidden shadow-2xl"
           style={{
             transition: 'transform 0.8s ease-out'
           }}
