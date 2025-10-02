@@ -1,4 +1,5 @@
 import React from 'react';
+import { MeshGradient } from "@paper-design/shaders-react";
 
 /**
  * AdminLoad Component
@@ -7,14 +8,29 @@ import React from 'react';
  */
 const AdminLoad = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
-      <div className="max-w-6xl mx-auto">
-        {/* Container met rustige achtergrond en veel witruimte */}
-        <div className="relative bg-white rounded-2xl shadow-lg">
-          {/* Blauwe glow effect rond de rand */}
-          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-400/30 via-blue-500/40 to-blue-400/30 blur-sm"></div>
-          <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-blue-500/50 via-blue-600/60 to-blue-500/50 blur-xs"></div>
-          <div className="relative z-10 bg-white rounded-2xl p-8 md:p-12 lg:p-16">
+    <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Animated shader background that continues the hero flow */}
+      <MeshGradient
+        className="absolute inset-0 w-full h-full"
+        colors={["#1e40af", "#2563eb", "#3b82f6", "#60a5fa", "#ffffff"]}
+        speed={0.3}
+      />
+      <MeshGradient
+        className="absolute inset-0 w-full h-full opacity-60"
+        colors={["#1e3a8a", "#ffffff", "#3b82f6", "#93c5fd"]}
+        speed={0.2}
+      />
+      
+      {/* Gradient overlay to smoothly fade the shader to white */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/40 via-white/70 to-white"></div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Container met elegante achtergrond */}
+        <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border-2 border-blue-500/80">
+          {/* Subtiele glow effect rond de rand */}
+          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-200/15 via-blue-300/20 to-blue-200/15 blur-sm"></div>
+          <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-blue-300/20 via-blue-400/25 to-blue-300/20 blur-xs"></div>
+          <div className="relative z-10 bg-white/95 backdrop-blur-sm rounded-2xl p-8 md:p-12 lg:p-16">
           
             {/* Hoofdtitel - opvallend en goed leesbaar */}
             <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center">
