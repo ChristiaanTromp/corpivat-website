@@ -1,5 +1,4 @@
 import React from 'react';
-import { MeshGradient } from "@paper-design/shaders-react";
 
 /**
  * AdminLoad Component
@@ -8,21 +7,7 @@ import { MeshGradient } from "@paper-design/shaders-react";
  */
 const AdminLoad = () => {
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Animated shader background that continues the hero flow */}
-      <MeshGradient
-        className="absolute inset-0 w-full h-full"
-        colors={["#1e40af", "#2563eb", "#3b82f6", "#60a5fa", "#ffffff"]}
-        speed={0.3}
-      />
-      <MeshGradient
-        className="absolute inset-0 w-full h-full opacity-60"
-        colors={["#1e3a8a", "#ffffff", "#3b82f6", "#93c5fd"]}
-        speed={0.2}
-      />
-      
-      {/* Gradient overlay to smoothly fade the shader to white */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/40 via-white/70 to-white"></div>
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
       
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Container met elegante achtergrond */}

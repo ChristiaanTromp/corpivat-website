@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 /**
- * Header component met moderne UI en glasmorfisme effect
+ * Header component met eenvoudige UI zonder zware animaties
  * Blauw en wit kleurenschema voor professionele uitstraling
  */
 const Header = () => {
@@ -23,11 +23,9 @@ const Header = () => {
                 <img 
                   src="/logo-coprivat.png" 
                   alt="CoPrivat Logo" 
-                  className="rounded-xl shadow-lg group-hover:shadow-blue-500/50 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+                  className="rounded-xl shadow-lg"
                   style={{width: '60px', height: '60px'}}
                 />
-                {/* Pulsing ring effect */}
-                <div className="absolute inset-0 rounded-xl bg-blue-500/30 animate-ping opacity-0 group-hover:opacity-100"></div>
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                 CoPrivat
@@ -39,19 +37,19 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-2">
             <Link 
               href="#product" 
-              className="text-gray-700 hover:text-blue-600 text-sm font-medium px-4 py-2 rounded-full hover:bg-blue-50 transition-all duration-200"
+              className="text-gray-700 hover:text-blue-600 text-sm font-medium px-4 py-2 rounded-full hover:bg-blue-50"
             >
               Product
             </Link>
             <Link 
               href="#team" 
-              className="text-gray-700 hover:text-blue-600 text-sm font-medium px-4 py-2 rounded-full hover:bg-blue-50 transition-all duration-200"
+              className="text-gray-700 hover:text-blue-600 text-sm font-medium px-4 py-2 rounded-full hover:bg-blue-50"
             >
               Team
             </Link>
             <Link 
               href="#contact" 
-              className="text-gray-700 hover:text-blue-600 text-sm font-medium px-4 py-2 rounded-full hover:bg-blue-50 transition-all duration-200"
+              className="text-gray-700 hover:text-blue-600 text-sm font-medium px-4 py-2 rounded-full hover:bg-blue-50"
             >
               Contact
             </Link>
@@ -60,18 +58,10 @@ const Header = () => {
           {/* CTA Button met gooey effect styling */}
           <div className="hidden md:block">
             <div className="relative flex items-center group">
-              {/* Arrow button - verschijnt bij hover */}
-              <div className="absolute right-0 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:-translate-x-32">
-                <button className="px-3 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 shadow-lg">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </button>
-              </div>
               {/* Main CTA button */}
               <Link 
                 href="#contact" 
-                className="relative px-6 py-2.5 rounded-full bg-white text-blue-600 font-semibold text-sm border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg z-10"
+                className="relative px-6 py-2.5 rounded-full bg-white text-blue-600 font-semibold text-sm border-2 border-blue-600 hover:bg-blue-600 hover:text-white shadow-md hover:shadow-lg z-10"
               >
                 Start vandaag
               </Link>
@@ -80,7 +70,7 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-lg text-blue-600 hover:bg-blue-50 transition-all duration-200"
+            className="md:hidden p-2 rounded-lg text-blue-600 hover:bg-blue-50"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >

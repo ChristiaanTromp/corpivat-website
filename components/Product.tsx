@@ -2,92 +2,9 @@ import React from 'react';
 
 /**
  * Product sectie - Hoe het werkt
- * Stap-voor-stap uitleg van het proces
+ * Stap-voor-stap uitleg van het proces zonder animaties voor betere performance
  */
 const Product = () => {
-  // CSS voor animaties
-  React.useEffect(() => {
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes flicker {
-        0% { 
-          color: #fbbf24; 
-          filter: drop-shadow(0 0 8px #fbbf24);
-        }
-        50% { 
-          color: #f59e0b; 
-          filter: drop-shadow(0 0 12px #f59e0b);
-        }
-        100% { 
-          color: #fbbf24; 
-          filter: drop-shadow(0 0 8px #fbbf24);
-        }
-      }
-      
-      @keyframes drawCircle {
-        0% {
-          stroke-dashoffset: 62.83;
-        }
-        50% {
-          stroke-dashoffset: 0;
-        }
-        100% {
-          stroke-dashoffset: 62.83;
-        }
-      }
-      
-      @keyframes drawCheck {
-        0% {
-          stroke-dashoffset: 10;
-        }
-        50% {
-          stroke-dashoffset: 0;
-        }
-        100% {
-          stroke-dashoffset: 10;
-        }
-      }
-      
-      @keyframes handWave {
-        0% {
-          transform: rotate(0deg) scale(1);
-        }
-        25% {
-          transform: rotate(-10deg) scale(1.05);
-        }
-        50% {
-          transform: rotate(10deg) scale(1.1);
-        }
-        75% {
-          transform: rotate(-5deg) scale(1.05);
-        }
-        100% {
-          transform: rotate(0deg) scale(1);
-        }
-      }
-      
-      @keyframes fadeInUp {
-        0% {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      .animate-fade-in-up {
-        animation: fadeInUp 0.6s ease-out forwards;
-        opacity: 0;
-      }
-    `;
-    document.head.appendChild(style);
-    
-    return () => {
-      document.head.removeChild(style);
-    };
-  }, []);
 
   const steps = [
     {
@@ -95,11 +12,11 @@ const Product = () => {
       title: "Post ontvangst",
       description: "Alle digitale post wordt ontvangen en gescand",
       icon: (
-        <div className="relative animate-bounce">
+        <div className="relative">
           <svg className="w-8 h-8" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
-          <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center animate-bounce">
+          <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
             7
           </div>
         </div>
@@ -204,7 +121,7 @@ const Product = () => {
                 Belangrijkste functies
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
                     <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -216,7 +133,7 @@ const Product = () => {
                   </p>
                 </div>
 
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
                     <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -228,7 +145,7 @@ const Product = () => {
                   </p>
                 </div>
 
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
                     <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -240,7 +157,7 @@ const Product = () => {
                   </p>
                 </div>
 
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
                     <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -252,7 +169,7 @@ const Product = () => {
                   </p>
                 </div>
 
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
                     <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -264,7 +181,7 @@ const Product = () => {
                   </p>
                 </div>
 
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
                     <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z" />

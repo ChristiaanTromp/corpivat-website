@@ -1,9 +1,8 @@
 import React from 'react';
-import { GlowCard } from './ui/spotlight-card';
 
 /**
  * Team sectie met teamleden
- * Gebruikt GlowCard component voor moderne UI met blauw/wit thema
+ * Gebruikt eenvoudige kaarten zonder animaties voor betere performance
  */
 const Team = () => {
   const teamMembers = [
@@ -48,28 +47,11 @@ const Team = () => {
 
             {/* Team Members */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-              {teamMembers.map((member, index) => {
-                const glowVariations = [
-                  { hue: 200, saturation: 80, lightness: 60 }, // Lichtblauw
-                  { hue: 220, saturation: 90, lightness: 65 }, // Middenblauw
-                  { hue: 240, saturation: 100, lightness: 70 }  // Donkerblauw
-                ];
-                const color = glowVariations[index];
-                return (
+              {teamMembers.map((member, index) => (
                 <div
                   key={index}
-                  style={{
-                    '--base': color.hue,
-                    '--spread': 150,
-                    '--saturation': color.saturation,
-                    '--lightness': color.lightness,
-                  } as React.CSSProperties}
+                  className="bg-white rounded-2xl shadow-lg border border-blue-100/50 p-8 hover:shadow-xl transition-shadow duration-300"
                 >
-                  <GlowCard
-                    glowColor="blue"
-                    size="lg"
-                    className="bg-white/80 backdrop-blur-sm border border-blue-100/50 !p-8"
-                  >
                   <div className="flex flex-col items-center text-center space-y-4">
                     {/* Avatar */}
                     <div className="relative">
@@ -107,89 +89,10 @@ const Team = () => {
                       <span>Contact</span>
                     </button>
                   </div>
-                  </GlowCard>
                 </div>
-                );
-              })}
+              ))}
             </div>
 
-            {/* Company Values */}
-            <div className="mt-20">
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-12">
-                Onze waarden
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                {[
-                  { hue: 190, saturation: 70, lightness: 50 }, // Lichtblauw
-                  { hue: 210, saturation: 80, lightness: 55 }, // Middenblauw  
-                  { hue: 230, saturation: 90, lightness: 60 }  // Donkerblauw
-                ].map((color, index) => (
-                <div
-                  key={index}
-                  style={{
-                    '--base': color.hue,
-                    '--spread': 120,
-                    '--saturation': color.saturation,
-                    '--lightness': color.lightness,
-                  } as React.CSSProperties}
-                >
-                  <GlowCard
-                    glowColor="blue"
-                    size="md"
-                    className="bg-white/60 backdrop-blur-sm border border-blue-100/30 !p-6"
-                  >
-                  <div className="text-center space-y-4">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                      <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
-                    </div>
-                    <h4 className="text-lg font-semibold text-gray-900">Patiëntveiligheid</h4>
-                    <p className="text-gray-600 text-sm">
-                      De veiligheid en privacy van patiënten staat altijd voorop
-                    </p>
-                  </div>
-                </GlowCard>
-
-                <GlowCard
-                  glowColor="blue"
-                  size="md"
-                  className="bg-white/60 backdrop-blur-sm border border-blue-100/30 !p-6"
-                >
-                  <div className="text-center space-y-4">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                      <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    </div>
-                    <h4 className="text-lg font-semibold text-gray-900">Innovatie</h4>
-                    <p className="text-gray-600 text-sm">
-                      We omarmen nieuwe technologieën om de zorg te verbeteren
-                    </p>
-                  </div>
-                </GlowCard>
-
-                <GlowCard
-                  glowColor="blue"
-                  size="md"
-                  className="bg-white/60 backdrop-blur-sm border border-blue-100/30 !p-6"
-                >
-                  <div className="text-center space-y-4">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                      <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-                    </div>
-                    <h4 className="text-lg font-semibold text-gray-900">Samenwerking</h4>
-                    <p className="text-gray-600 text-sm">
-                      We werken nauw samen met zorgverleners en hun teams
-                    </p>
-                  </div>
-                  </GlowCard>
-                </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
