@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import ShaderHero from '../components/ui/hero';
+import Header from '../components/Header';
 import AdminLoad from '../components/AdminLoad';
 import Product from '../components/Product';
 import Team from '../components/Team';
@@ -53,7 +53,49 @@ export default function Home() {
 
       {/* Main Page Content */}
       <div className="min-h-screen bg-white">
-        <ShaderHero />
+        <Header />
+        
+        {/* Eenvoudige Hero Sectie */}
+        <section className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 py-20">
+          <div className="container-max">
+            <div className="section-padding">
+              <div className="max-w-4xl mx-auto text-center text-white">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm mb-6 border border-white/20">
+                  <span className="text-white text-sm font-medium">
+                    ✨ AI-gedreven postverwerking
+                  </span>
+                </div>
+                
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                  Automatiseer de{' '}
+                  <span className="text-white drop-shadow-lg">digitale post</span>{' '}
+                  van uw huisartsenpraktijk
+                </h1>
+                
+                <p className="text-xl sm:text-2xl text-blue-50 mb-8 leading-relaxed max-w-3xl mx-auto">
+                  We bouwen momenteel actief aan ons product en betrekken huisartsen in het proces, 
+                  zodat onze oplossing perfect aansluit op de praktijk.
+                </p>
+                
+                <div className="flex items-center justify-center gap-6 flex-wrap">
+                  <a
+                    href="#product"
+                    className="px-8 py-4 rounded-full bg-transparent border-2 border-white text-white font-medium hover:bg-white hover:text-blue-600 shadow-lg"
+                  >
+                    Bekijk hoe het werkt
+                  </a>
+                  <a
+                    href="#contact"
+                    className="px-8 py-4 rounded-full bg-white text-blue-600 font-semibold hover:bg-blue-50 shadow-lg"
+                  >
+                    Join de wachtlijst
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         <main>
           <AdminLoad />
           <Product />
