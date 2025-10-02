@@ -84,16 +84,25 @@ export default function ShaderShowcase() {
         </defs>
       </svg>
 
-      <MeshGradient
-        className="absolute inset-0 w-full h-full"
-        colors={["#1e40af", "#2563eb", "#3b82f6", "#60a5fa", "#ffffff"]}
-        speed={0.3}
-      />
-      <MeshGradient
-        className="absolute inset-0 w-full h-full opacity-60"
-        colors={["#1e3a8a", "#ffffff", "#3b82f6", "#93c5fd"]}
-        speed={0.2}
-      />
+      {isMounted ? (
+        <>
+          <MeshGradient
+            className="absolute inset-0 w-full h-full"
+            colors={["#1e40af", "#2563eb", "#3b82f6", "#60a5fa", "#ffffff"]}
+            speed={0.3}
+          />
+          <MeshGradient
+            className="absolute inset-0 w-full h-full opacity-60"
+            colors={["#1e3a8a", "#ffffff", "#3b82f6", "#93c5fd"]}
+            speed={0.2}
+          />
+        </>
+      ) : (
+        <>
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-800 via-blue-600 to-blue-700"></div>
+          <div className="absolute inset-0 w-full h-full opacity-60 bg-gradient-to-tr from-blue-900/30 via-transparent to-blue-400/20"></div>
+        </>
+      )}
 
       <header className="relative z-20 flex items-center justify-between p-6">
         <motion.div
@@ -293,27 +302,33 @@ export default function ShaderShowcase() {
 
       <div className="absolute bottom-8 right-8 z-30">
         <div className="relative w-20 h-20 flex items-center justify-center">
-          <PulsingBorder
-            colors={["#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe", "#ffffff", "#bfdbfe"]}
-            colorBack="#00000000"
-            speed={1.5}
-            roundness={1}
-            thickness={0.1}
-            softness={0.2}
-            intensity={5}
-            spotSize={0.1}
-            pulse={0.1}
-            smoke={0.5}
-            smokeSize={4}
-            scale={0.65}
-            rotation={0}
-            frame={9161408.251009725}
-            style={{
-              width: "60px",
-              height: "60px",
-              borderRadius: "50%",
-            }}
-          />
+          {isMounted ? (
+            <PulsingBorder
+              colors={["#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe", "#ffffff", "#bfdbfe"]}
+              colorBack="#00000000"
+              speed={1.5}
+              roundness={1}
+              thickness={0.1}
+              softness={0.2}
+              intensity={5}
+              spotSize={0.1}
+              pulse={0.1}
+              smoke={0.5}
+              smokeSize={4}
+              scale={0.65}
+              rotation={0}
+              frame={9161408.251009725}
+              style={{
+                width: "60px",
+                height: "60px",
+                borderRadius: "50%",
+              }}
+            />
+          ) : (
+            <div className="w-15 h-15 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20">
+              <div className="w-8 h-8 bg-blue-500 rounded-full animate-pulse"></div>
+            </div>
+          )}
 
           {/* Rotating Text Around the Pulsing Border */}
           <motion.svg
