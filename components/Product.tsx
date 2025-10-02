@@ -96,7 +96,7 @@ const Product = () => {
       description: "Alle digitale post wordt ontvangen en gescand",
       icon: (
         <div className="relative animate-bounce">
-          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-8 h-8" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
           <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center animate-bounce">
@@ -110,10 +110,7 @@ const Product = () => {
       title: "AI analyse",
       description: "Onze AI analyseert de inhoud en classificeert het type document",
       icon: (
-        <svg className="w-8 h-8 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{
-          animation: 'flicker 1.5s ease-in-out infinite alternate',
-          filter: 'drop-shadow(0 0 8px #fbbf24)'
-        }}>
+        <svg className="w-8 h-8" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
         </svg>
       )
@@ -123,9 +120,9 @@ const Product = () => {
       title: "Output wordt gegenereerd",
       description: "De AI geeft de bijhorende output die nodig is voor het type post",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        <svg className="w-8 h-8" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="#2563eb" strokeWidth="4"></circle>
+          <path className="opacity-75" fill="#2563eb" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 714 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
       )
     },
@@ -134,19 +131,9 @@ const Product = () => {
       title: "Menselijke controle",
       description: "De out wordt voorgelegd aan de huisarts voor controle",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{
-          animation: 'drawCheck 4s ease-in-out infinite'
-        }}>
-          <circle cx="12" cy="12" r="10" stroke="#10b981" strokeWidth="2" fill="none" style={{
-            strokeDasharray: '62.83',
-            strokeDashoffset: '62.83',
-            animation: 'drawCircle 4s ease-in-out infinite'
-          }} />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12l2 2 4-4" stroke="#10b981" fill="none" style={{
-            strokeDasharray: '10',
-            strokeDashoffset: '10',
-            animation: 'drawCheck 4s ease-in-out infinite'
-          }} />
+        <svg className="w-8 h-8" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke="#2563eb" strokeWidth="2" fill="none" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12l2 2 4-4" stroke="#2563eb" fill="none" />
         </svg>
       )
     },
@@ -155,9 +142,9 @@ const Product = () => {
       title: "Handmatig verwerken",
       description: "Complexe gevallen worden voorgelegd aan uw team voor controle",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V9a1.5 1.5 0 013 0v1.5m-3 0V9a1.5 1.5 0 013 0v1.5m0 0V14m0-2.5v-6a1.5 1.5 0 013 0v6" 
-          stroke="#3b82f6" />
+        <svg className="w-8 h-8" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+          stroke="#2563eb" />
         </svg>
       )
     }
