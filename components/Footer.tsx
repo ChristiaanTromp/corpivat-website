@@ -107,7 +107,7 @@ const Footer = () => {
           <div className="mt-8 pt-8 border-t border-white/20">
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
               <p className="text-white text-sm">
-                © 2024 CoPrivat. Alle rechten voorbehouden.
+                © 2025 CoPrivat. Alle rechten voorbehouden.
               </p>
               <div className="flex space-x-6">
                 <Link href="/privacy" className="text-white hover:text-gray-200 text-sm transition-colors">

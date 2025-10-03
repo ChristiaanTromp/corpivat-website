@@ -8,21 +8,21 @@ const Team = () => {
   const teamMembers = [
     {
       name: 'Christiaan Tromp',
-      role: 'CEO',
+      role: 'CTO',
       description: 'Gepassioneerd over het stroomlijnen van administratieve processen in de zorg met innovatieve technologie.',
       avatarUrl: 'Christiaan PF.png',
       linkedinUrl: 'https://www.linkedin.com/in/christiaan-tromp-0145772bb/',
     },
     {
       name: 'Floris Revis',
-      role: 'Product Manager',
+      role: ' SEO',
       description: 'Stuurt de ontwikkeling van het product en vertaalt de behoeften van huisartsen naar praktische en gebruiksvriendelijke software-oplossingen.',
       avatarUrl: 'Floris PF.png',
       linkedinUrl: 'https://www.linkedin.com/in/floris-revis-448b95363/',
     },
     {
       name: 'Georg Tromp',
-      role: 'AI Developer',
+      role: 'COO',
       description: 'Software engineer gespecialiseerd in AI en machine learning, bouwt aan de kern van ons platform.',
       avatarUrl: 'Georg PF.png',
       linkedinUrl: 'https://www.linkedin.com/in/georg-tromp-83a1632bb/',
@@ -30,7 +30,7 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="bg-blue-50 py-20">
+    <section id="team" className="bg-blue-50 py-2">
       <div className="container-max">
         <div className="section-padding">
           <div className="max-w-6xl mx-auto">
