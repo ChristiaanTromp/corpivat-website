@@ -56,11 +56,11 @@ export default function Home() {
         <Header />
         
         {/* Eenvoudige Hero Sectie */}
-        <section className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 py-20">
+        <section className="bg-gradient-to-r from-blue-800 via-blue-300 to-gray-200 py-20">
           <div className="container-max">
             <div className="section-padding">
-              <div className="max-w-4xl mx-auto text-center text-white">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm mb-6 border border-white/20">
+              <div className="max-w-4xl -ml-8 mr-auto text-left text-white">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm mb-6 border border-white/30">
                   <span className="text-white text-sm font-medium">
                     ✨ AI-gedreven postverwerking
                   </span>
@@ -72,21 +72,21 @@ export default function Home() {
                   van uw huisartsenpraktijk
                 </h1>
                 
-                <p className="text-xl sm:text-2xl text-blue-50 mb-8 leading-relaxed max-w-3xl mx-auto">
+                <p className="text-xl sm:text-2xl text-white mb-8 leading-relaxed max-w-3xl">
                   We bouwen momenteel actief aan ons product en betrekken huisartsen in het proces, 
                   zodat onze oplossing perfect aansluit op de praktijk.
                 </p>
                 
-                <div className="flex items-center justify-center gap-6 flex-wrap">
+                <div className="flex items-center justify-start gap-6 flex-wrap">
                   <a
                     href="#product"
-                    className="px-8 py-4 rounded-full bg-transparent border-2 border-white text-white font-medium hover:bg-white hover:text-blue-600 shadow-lg"
+                    className="px-8 py-4 rounded-full bg-transparent border-2 border-white text-white font-medium hover:bg-white hover:text-gray-800 shadow-lg"
                   >
                     Bekijk hoe het werkt
                   </a>
                   <a
                     href="#contact"
-                    className="px-8 py-4 rounded-full bg-white text-blue-600 font-semibold hover:bg-blue-50 shadow-lg"
+                    className="px-8 py-4 rounded-full bg-white text-gray-800 font-semibold hover:bg-gray-100 shadow-lg"
                   >
                     Join de wachtlijst
                   </a>
