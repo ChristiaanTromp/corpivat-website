@@ -14,7 +14,7 @@ const Header = () => {
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-800 via-blue-300 to-gray-200"></div>
       
              <div className="container-max">
-               <div className="flex justify-between items-center py-0.5 px-1 sm:px-2 lg:px-3">
+               <div className="flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8">
           {/* Logo met hover effect */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3 group">
@@ -22,8 +22,8 @@ const Header = () => {
               <img 
                 src="/logo-coprivat.png" 
                 alt="CoPrivat Logo" 
-                width={50}
-                height={50}
+                width={80}
+                height={80}
                 style={{ 
                   backgroundColor: 'transparent',
                   border: 'none',
@@ -34,7 +34,7 @@ const Header = () => {
                   margin: '0'
                 }}
               />
-              <span className="text-xs font-bold text-white">
+              <span className="text-lg font-bold text-white">
                 CoPrivat
               </span>
             </Link>
@@ -44,19 +44,19 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-1">
                    <Link 
                      href="#product" 
-                     className="text-white hover:text-gray-200 text-xs font-medium px-1 py-0 rounded-full hover:bg-white/20"
+                     className="text-white hover:text-gray-200 text-sm font-medium px-3 py-2 rounded-full hover:bg-white/20"
                    >
                      Product
                    </Link>
                    <Link 
                      href="#team" 
-                     className="text-white hover:text-gray-200 text-xs font-medium px-1 py-0 rounded-full hover:bg-white/20"
+                     className="text-white hover:text-gray-200 text-sm font-medium px-3 py-2 rounded-full hover:bg-white/20"
                    >
                      Team
                    </Link>
                    <Link 
                      href="#contact" 
-                     className="text-white hover:text-gray-200 text-xs font-medium px-1 py-0 rounded-full hover:bg-white/20"
+                     className="text-white hover:text-gray-200 text-sm font-medium px-3 py-2 rounded-full hover:bg-white/20"
                    >
                      Contact
                    </Link>
@@ -68,7 +68,7 @@ const Header = () => {
               {/* Main CTA button */}
                      <Link 
                        href="#contact" 
-                       className="relative px-2 py-0.5 rounded-full bg-white text-gray-800 font-semibold text-xs border border-white hover:bg-gray-100 hover:text-gray-900 shadow-sm hover:shadow-md z-10"
+                       className="relative px-4 py-2 rounded-full bg-white text-gray-800 font-semibold text-sm border border-white hover:bg-gray-100 hover:text-gray-900 shadow-sm hover:shadow-md z-10"
                      >
                        Start vandaag
                      </Link>
