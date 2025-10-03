@@ -38,9 +38,8 @@ const AdminLoad = () => {
                 {/* Blauw-witte glow effect - buiten de unit */}
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
-                <div className="relative bg-blue-50 rounded-xl px-8 py-5 border-l-4 border-blue-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <h3 className="text-xl font-semibold text-blue-800 mb-4 flex items-center">
-                  <span className="text-2xl mr-3">📬</span>
+                <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-xl px-8 py-5 border-l-4 border-blue-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <h3 className="text-xl font-semibold text-blue-800 mb-4">
                   Post & dossierbeheer
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -73,9 +72,8 @@ const AdminLoad = () => {
                 {/* Blauw-witte glow effect - buiten de unit */}
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
-                <div className="relative bg-green-50 rounded-xl px-8 py-12 border-l-4 border-green-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <h3 className="text-xl font-semibold text-green-800 mb-4 flex items-center">
-                  <span className="text-2xl mr-3">💸</span>
+                <div className="relative bg-gradient-to-br from-green-50 to-white rounded-xl px-8 py-12 border-l-4 border-green-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <h3 className="text-xl font-semibold text-green-800 mb-4">
                   Financiële administratie
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -104,9 +102,8 @@ const AdminLoad = () => {
                 {/* Blauw-witte glow effect - buiten de unit */}
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
-                <div className="relative bg-red-50 rounded-xl px-8 py-12 border-l-4 border-red-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <h3 className="text-xl font-semibold text-red-800 mb-4 flex items-center">
-                  <span className="text-2xl mr-3">🩺</span>
+                <div className="relative bg-gradient-to-br from-red-50 to-white rounded-xl px-8 py-12 border-l-4 border-red-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <h3 className="text-xl font-semibold text-red-800 mb-4">
                   Medische verslaglegging
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -135,9 +132,8 @@ const AdminLoad = () => {
                 {/* Blauw-witte glow effect - buiten de unit */}
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
-                <div className="relative bg-purple-50 rounded-xl px-8 py-12 border-l-4 border-purple-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <h3 className="text-xl font-semibold text-purple-800 mb-4 flex items-center">
-                  <span className="text-2xl mr-3">📊</span>
+                <div className="relative bg-gradient-to-br from-purple-50 to-white rounded-xl px-8 py-12 border-l-4 border-purple-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <h3 className="text-xl font-semibold text-purple-800 mb-4">
                   Overige taken
                 </h3>
                 <ul className="space-y-2 text-gray-700">

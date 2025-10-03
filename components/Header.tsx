@@ -18,17 +18,22 @@ const Header = () => {
           {/* Logo met hover effect */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="p-1">
-                {/* Logo met glow effect */}
-                     <img 
-                       src="/logo-coprivat.png" 
-                       alt="CoPrivat Logo" 
-                       width={12}
-                       height={12}
-                       className="rounded-lg shadow-md"
-                       style={{ width: '50px', height: '50px' }}
-                     />
-              </div>
+              {/* Logo zonder achtergrond vakje */}
+              <img 
+                src="/logo-coprivat.png" 
+                alt="CoPrivat Logo" 
+                width={50}
+                height={50}
+                style={{ 
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  outline: 'none',
+                  boxShadow: 'none',
+                  borderRadius: '0',
+                  padding: '0',
+                  margin: '0'
+                }}
+              />
               <span className="text-xs font-bold text-white">
                 CoPrivat
               </span>
