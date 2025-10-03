@@ -67,9 +67,9 @@ export default function Home() {
                 </div>
                 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  Automatiseer de{' '}
-                  <span className="text-white drop-shadow-lg">digitale post</span>{' '}
-                  van uw huisartsenpraktijk
+                  <span className="text-white drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.4)'}}>Automatiseer</span> de{' '}
+                  <span className="text-white drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.4)'}}>digitale post</span>{' '}
+                  van uw <span className="text-white drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.4)'}}>huisartsenpraktijk</span>
                 </h1>
                 
                 <p className="text-xl sm:text-2xl text-white mb-8 leading-relaxed max-w-3xl">
@@ -86,7 +86,8 @@ export default function Home() {
                   </a>
                   <a
                     href="#contact"
-                    className="px-8 py-4 rounded-full bg-white text-gray-800 font-semibold hover:bg-gray-100 shadow-lg"
+                    className="px-8 py-4 rounded-full bg-white text-gray-800 font-semibold hover:bg-gray-100 shadow-lg hover:shadow-white/50 hover:shadow-2xl transition-all duration-300 border-2 border-blue-500"
+                    style={{boxShadow: '0 0 20px rgba(255,255,255,0.3)'}}
                   >
                     Join de wachtlijst
                   </a>

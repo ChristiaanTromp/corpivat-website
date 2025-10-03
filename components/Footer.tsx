@@ -14,9 +14,21 @@ const Footer = () => {
             {/* Company Info */}
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">C</span>
-                </div>
+                <img 
+                  src="/logo-coprivat.png" 
+                  alt="CoPrivat Logo" 
+                  width={64}
+                  height={64}
+                  style={{ 
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    outline: 'none',
+                    boxShadow: 'none',
+                    borderRadius: '0',
+                    padding: '0',
+                    margin: '0'
+                  }}
+                />
                 <span className="text-xl font-bold text-white">CoPrivat</span>
               </div>
               <p className="text-white text-sm leading-relaxed">

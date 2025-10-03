@@ -110,7 +110,7 @@ const Product = () => {
               ))}
             </div>
 
-            <div className="mt-12">
+            <div className="mt-32">
               <h3 className="text-xl font-bold text-gray-800 text-center mb-6">
                 Belangrijkste functies
               </h3>

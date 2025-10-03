@@ -40,8 +40,8 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation met moderne hover effecten */}
-          <nav className="hidden md:flex items-center space-x-1">
+          {/* Desktop Navigation met moderne hover effecten - gecentreerd */}
+          <nav className="hidden md:flex items-center space-x-1 absolute left-1/2 transform -translate-x-1/2">
                    <Link 
                      href="#product" 
                      className="text-white hover:text-gray-200 text-sm font-medium px-3 py-2 rounded-full hover:bg-white/20"
@@ -62,18 +62,6 @@ const Header = () => {
                    </Link>
           </nav>
 
-          {/* CTA Button met gooey effect styling */}
-          <div className="hidden md:block">
-            <div className="relative flex items-center group">
-              {/* Main CTA button */}
-                     <Link 
-                       href="#contact" 
-                       className="relative px-4 py-2 rounded-full bg-white text-gray-800 font-semibold text-sm border border-white hover:bg-gray-100 hover:text-gray-900 shadow-sm hover:shadow-md z-10"
-                     >
-                       Start vandaag
-                     </Link>
-            </div>
-          </div>
 
           {/* Mobile menu button */}
                  <button

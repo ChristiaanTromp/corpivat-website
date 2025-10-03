@@ -38,8 +38,14 @@ const AdminLoad = () => {
                 {/* Blauw-witte glow effect - buiten de unit */}
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
-                <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-xl px-8 py-5 border-l-4 border-blue-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <h3 className="text-xl font-semibold text-blue-800 mb-4">
+                 <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-xl px-8 py-7 border-l-4 border-blue-500 border border-blue-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                  {/* Badge half in/uit de unit */}
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="bg-blue-600 text-white px-6 py-2 rounded-full font-bold text-sm">
+                      GROOTSTE PROBLEEM
+                    </div>
+                  </div>
+                <h3 className="text-xl font-semibold text-blue-800 mb-3">
                   Post & dossierbeheer
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -72,8 +78,14 @@ const AdminLoad = () => {
                 {/* Blauw-witte glow effect - buiten de unit */}
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
-                <div className="relative bg-gradient-to-br from-green-50 to-white rounded-xl px-8 py-12 border-l-4 border-green-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <h3 className="text-xl font-semibold text-green-800 mb-4">
+                <div className="relative bg-gradient-to-br from-green-50 to-white rounded-xl px-8 pt-7 pb-12 border-l-4 border-green-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                  {/* Badge half in/uit de unit */}
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="bg-green-300 text-white px-6 py-2 rounded-full font-bold text-sm">
+                      WAT WIJ OOK ZIEN
+                    </div>
+                  </div>
+                <h3 className="text-xl font-semibold text-green-800 mb-3">
                   Financiële administratie
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -93,6 +105,10 @@ const AdminLoad = () => {
                     <span className="text-green-500 mr-2">•</span>
                     <span>Financiële rapportages opstellen</span>
                   </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Declaraties controleren & indienen</span>
+                  </li>
                 </ul>
                 </div>
               </div>
@@ -102,8 +118,14 @@ const AdminLoad = () => {
                 {/* Blauw-witte glow effect - buiten de unit */}
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
-                <div className="relative bg-gradient-to-br from-red-50 to-white rounded-xl px-8 py-12 border-l-4 border-red-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <h3 className="text-xl font-semibold text-red-800 mb-4">
+                <div className="relative bg-gradient-to-br from-red-50 to-white rounded-xl px-8 pt-7 pb-12 border-l-4 border-red-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                  {/* Badge half in/uit de unit */}
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="bg-red-300 text-white px-6 py-2 rounded-full font-bold text-sm">
+                      WAT WIJ OOK ZIEN
+                    </div>
+                  </div>
+                <h3 className="text-xl font-semibold text-red-800 mb-3">
                   Medische verslaglegging
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -123,6 +145,10 @@ const AdminLoad = () => {
                     <span className="text-red-500 mr-2">•</span>
                     <span>Medische dossiers archiveren</span>
                   </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">•</span>
+                    <span>Samenvattingen en journaalregels aanvullen</span>
+                  </li>
                 </ul>
                 </div>
               </div>
@@ -132,8 +158,14 @@ const AdminLoad = () => {
                 {/* Blauw-witte glow effect - buiten de unit */}
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
-                <div className="relative bg-gradient-to-br from-purple-50 to-white rounded-xl px-8 py-12 border-l-4 border-purple-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <h3 className="text-xl font-semibold text-purple-800 mb-4">
+                <div className="relative bg-gradient-to-br from-purple-50 to-white rounded-xl px-8 pt-7 pb-12 border-l-4 border-purple-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                  {/* Badge half in/uit de unit */}
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="bg-purple-300 text-white px-6 py-2 rounded-full font-bold text-sm">
+                      WAT WIJ OOK ZIEN
+                    </div>
+                  </div>
+                <h3 className="text-xl font-semibold text-purple-800 mb-3">
                   Overige taken
                 </h3>
                 <ul className="space-y-2 text-gray-700">
@@ -153,6 +185,10 @@ const AdminLoad = () => {
                     <span className="text-purple-500 mr-2">•</span>
                     <span>Medicatie- en verzekeringsvragen afhandelen</span>
                   </li>
+                  <li className="flex items-start">
+                    <span className="text-purple-500 mr-2">•</span>
+                    <span>Planning en afstemming met externe zorgverleners</span>
+                  </li>
                 </ul>
                 </div>
               </div>
@@ -168,7 +204,7 @@ const AdminLoad = () => {
                   Ondanks deze brede waaier aan administratieve verplichtingen, blijkt uit onderzoeken dat 
                   <span className="font-semibold text-blue-800"> postverwerking de grootste administratieve last vormt</span>. 
                   Gemiddeld besteden huisartsen en hun assistenten hier ongeveer 
-                  <span className="font-bold text-blue-800 text-xl"> twee uur per dag</span> aan — 
+                  <span className="font-semibold text-blue-800"> twee uur per dag</span> aan — 
                   kostbare tijd die niet aan directe patiëntenzorg kan worden besteed.
                 </p>
               </div>
