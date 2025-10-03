@@ -68,7 +68,7 @@ const Product = () => {
   ];
 
   return (
-    <section id="product" className="bg-gray-50">
+    <section id="product" className="bg-blue-50">
       <div className="container-max">
         <div className="section-padding">
           <div className="max-w-6xl mx-auto">
@@ -135,7 +135,7 @@ const Product = () => {
                   </div>
                   <h4 className="text-base font-semibold text-gray-800 mb-1">HIS integratie</h4>
                   <p className="text-gray-600 text-xs">
-                    Naadloze integratie met alle grote HIS-systemen
+                    Wij zijn bezig om het met HIS-systemen te integreren
                   </p>
                 </div>
 
@@ -145,9 +145,9 @@ const Product = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h4 className="text-base font-semibold text-gray-800 mb-1">Real-time verwerking</h4>
+                  <h4 className="text-base font-semibold text-gray-800 mb-1">Verwerking</h4>
                   <p className="text-gray-600 text-xs">
-                    Post wordt binnen minuten verwerkt en toegevoegd
+                    Post wordt binnen minuten verwerkt en wordt direct aan uw team voorgelegd
                   </p>
                 </div>
               </div>
