@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import AdminLoad from '../components/AdminLoad';
@@ -11,6 +11,41 @@ import Footer from '../components/Footer';
  * Combineert alle secties tot een complete landing page
  */
 export default function Home() {
+  // Scroll to top on mount
+  useEffect(() => {
+    // Force scroll to top immediately
+    const forceScrollToTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      if (document.body) {
+        document.body.scrollTop = 0;
+      }
+    };
+    
+    // Prevent scroll restoration
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    
+    // Force scroll multiple times to ensure it sticks
+    forceScrollToTop();
+    
+    const interval = setInterval(() => {
+      forceScrollToTop();
+    }, 10);
+    
+    // Stop interval after a short time
+    const timer = setTimeout(() => {
+      clearInterval(interval);
+    }, 100);
+    
+    // Cleanup
+    return () => {
+      clearTimeout(timer);
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -41,14 +76,31 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="16x32" href="/favicon-16x16.png" />
         
         {/* Preconnect for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Prevent scroll restoration immediately */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Prevent scroll restoration immediately
+              if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+              }
+              
+              // Force scroll to top immediately
+              window.scrollTo(0, 0);
+              document.documentElement.scrollTop = 0;
+              if (document.body) {
+                document.body.scrollTop = 0;
+              }
+            `,
+          }}
+        />
+        
       </Head>
 
       {/* Main Page Content */}

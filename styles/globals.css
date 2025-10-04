@@ -8,10 +8,41 @@
 @layer base {
   html {
     font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: auto !important;
+    scroll-padding-top: 0;
+    overflow-x: hidden;
+    scroll-top: 0 !important;
   }
   
   body {
     @apply text-gray-900 bg-white;
+    scroll-behavior: auto !important;
+    scroll-padding-top: 0;
+    overflow-x: hidden;
+    position: relative;
+    scroll-top: 0 !important;
+  }
+  
+  /* Force scroll to top on page load */
+  html, body {
+    scroll-snap-type: none;
+    scroll-padding: 0;
+    scroll-margin: 0;
+    scroll-top: 0 !important;
+  }
+  
+  /* Prevent any scroll restoration */
+  * {
+    scroll-behavior: auto !important;
+  }
+  
+  /* Force initial scroll position */
+  html:not(.loaded) {
+    scroll-top: 0 !important;
+  }
+  
+  body:not(.loaded) {
+    scroll-top: 0 !important;
   }
 }
 

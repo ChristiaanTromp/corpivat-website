@@ -13,6 +13,10 @@ export default function Document() {
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#2563eb" />
         
+        {/* Favicon */}
+        <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+        <link rel="shortcut icon" href="/favicon.png" />
+        
         {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
