@@ -17,6 +17,13 @@ Een professionele Next.js website voor CoPrivat - AI-gedreven software voor auto
 3. **Open in browser:**
    Navigeer naar [http://localhost:3000](http://localhost:3000)
 
+## 🌐 Live Website
+
+De website is automatisch gedeployed naar GitHub Pages:
+- **Live URL**: https://christiaantromp.github.io/corpivat-website/
+- **Automatische deployment**: Elke push naar main branch
+- **Static export**: Geoptimaliseerd voor snelle laadtijden
+
 ## 📁 Project Structuur
 
 ```

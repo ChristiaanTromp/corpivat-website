@@ -19,7 +19,7 @@ export default function Contact() {
   });
 
   // State voor validatie errors
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -43,14 +43,14 @@ export default function Contact() {
   }, [showSuccessModal]);
 
   // Close modal when clicking outside
-  const handleModalClose = (e) => {
+  const handleModalClose = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       setShowSuccessModal(false);
     }
   };
 
   // Input change handler
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -67,14 +67,14 @@ export default function Contact() {
   };
 
   // Email validatie functie
-  const isValidEmail = (email) => {
+  const isValidEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
   // Form validatie
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: Record<string, string> = {};
 
     // Naam validatie (verplicht)
     if (!formData.naam.trim()) {
@@ -103,7 +103,7 @@ export default function Contact() {
   };
 
   // Form submit handler
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     if (!validateForm()) {
@@ -141,7 +141,8 @@ export default function Contact() {
       }
     } catch (error) {
       console.error('Fout bij verzenden bericht:', error);
-      setSubmitMessage(`Er is een fout opgetreden: ${error.message}. Probeer het later opnieuw.`);
+      const errorMessage = error instanceof Error ? error.message : 'Onbekende fout';
+      setSubmitMessage(`Er is een fout opgetreden: ${errorMessage}. Probeer het later opnieuw.`);
     } finally {
       setIsSubmitting(false);
     }

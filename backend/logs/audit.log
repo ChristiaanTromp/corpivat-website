@@ -46,3 +46,15 @@
 2025-10-05 12:33:25,580 - __main__ - INFO - Contact bericht ontvangen van: georgtromp@gmail.com
 2025-10-05 12:33:26,368 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
 2025-10-05 12:33:26,368 - __main__ - INFO - Contact email succesvol verzonden voor: georgtromp@gmail.com
+2025-10-05 13:19:25,987 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: georgtromp@gmail.com
+2025-10-05 13:19:26,626 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 13:19:26,627 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: georgtromp@gmail.com
+2025-10-05 13:20:20,777 - __main__ - INFO - Contact bericht ontvangen van: georgtromp@gmail.com
+2025-10-05 13:20:21,349 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 13:20:21,349 - __main__ - INFO - Contact email succesvol verzonden voor: georgtromp@gmail.com
+2025-10-05 14:32:11,945 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: georgtromp@gmail.com
+2025-10-05 14:32:12,712 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 14:32:12,712 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: georgtromp@gmail.com
+2025-10-05 14:34:21,157 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: georgtromp@gmail.com
+2025-10-05 14:34:21,810 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 14:34:21,810 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: georgtromp@gmail.com

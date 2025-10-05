@@ -18,7 +18,7 @@ export default function Wachtlijst() {
   });
 
   // State voor validatie errors
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Record<string, string>>({});
   
   // State voor form submission status
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,7 +27,7 @@ export default function Wachtlijst() {
   /**
    * Valideert e-mail adres
    */
-  const validateEmail = (email) => {
+  const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
@@ -36,7 +36,7 @@ export default function Wachtlijst() {
    * Valideert formulier data
    */
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: Record<string, string> = {};
 
     // Naam is verplicht
     if (!formData.naam.trim()) {
@@ -57,7 +57,7 @@ export default function Wachtlijst() {
   /**
    * Handelt formulier input changes af
    */
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -76,7 +76,7 @@ export default function Wachtlijst() {
   /**
    * Handelt formulier submission af
    */
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     if (!validateForm()) {
@@ -105,7 +105,8 @@ export default function Wachtlijst() {
       }
     } catch (error) {
       console.error('Fout bij aanmelden:', error);
-      alert(`Er is een fout opgetreden: ${error.message}. Probeer het opnieuw.`);
+      const errorMessage = error instanceof Error ? error.message : 'Onbekende fout';
+      alert(`Er is een fout opgetreden: ${errorMessage}. Probeer het opnieuw.`);
     } finally {
       setIsSubmitting(false);
     }
