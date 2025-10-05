@@ -38,3 +38,27 @@ next-env.d.ts
 
 # OS
 Thumbs.db
+
+# Next.js build cache
+.next/
+out/
+
+# Backend logs
+backend/logs/*.log
+
+# Environment files (keep example)
+backend/.env
+!backend/.env.example
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Test files (optional)
+backend/test_*.py
+test-api.sh
+
