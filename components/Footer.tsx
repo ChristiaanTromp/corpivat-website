@@ -109,14 +109,6 @@ const Footer = () => {
               <p className="text-white text-sm">
                 © 2025 CoPrivat. Alle rechten voorbehouden.
               </p>
-              <div className="flex space-x-6">
-                <Link href="/privacy" className="text-white hover:text-gray-200 text-sm transition-colors">
-                  Privacy
-                </Link>
-                <Link href="/terms" className="text-white hover:text-gray-200 text-sm transition-colors">
-                  Voorwaarden
-                </Link>
-              </div>
             </div>
           </div>
         </div>
