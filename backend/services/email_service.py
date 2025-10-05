@@ -241,6 +241,104 @@ class EmailService:
             logger.error(f"Fout bij verzenden contact notificatie: {str(e)}")
             return False
     
+    async def send_contact_confirmation(self, submission) -> bool:
+        """
+        Stuur bevestigingsmail naar de gebruiker die contact heeft opgenomen
+        """
+        try:
+            subject = "Bericht Ontvangen - CoPrivat"
+            
+            # HTML email body
+            html_body = f"""
+            <html>
+            <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+                <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h1 style="color: #1e40af; margin: 0;">CoPrivat</h1>
+                        <p style="color: #6b7280; margin: 5px 0;">AI-gedreven software voor huisartsenpraktijken</p>
+                    </div>
+                    
+                    <h2 style="color: #1e40af; border-bottom: 2px solid #1e40af; padding-bottom: 10px;">
+                        📧 Bericht Ontvangen
+                    </h2>
+                    
+                    <p>Beste {submission.naam},</p>
+                    
+                    <p>Hartelijk dank voor uw bericht! We hebben uw contactverzoek ontvangen en zullen zo snel mogelijk contact met u opnemen.</p>
+                    
+                    <div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #1e40af; margin-top: 0;">Uw bericht:</h3>
+                        <p><strong>Onderwerp:</strong> {submission.onderwerp}</p>
+                        <p><strong>Bericht:</strong></p>
+                        <div style="background-color: #ffffff; padding: 15px; border: 1px solid #e5e7eb; border-radius: 6px; margin-top: 10px;">
+                            <p style="white-space: pre-wrap; margin: 0;">{submission.bericht}</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background-color: #dbeafe; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #1e40af; margin-top: 0;">Wat gebeurt er nu?</h3>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li>We bekijken uw bericht zorgvuldig</li>
+                            <li>Een van onze teamleden neemt binnen 24 uur contact met u op</li>
+                            <li>We beantwoorden uw vragen over CoPrivat</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background-color: #f8fafc; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #374151; margin-top: 0;">Contactgegevens:</h3>
+                        <p><strong>Naam:</strong> {submission.naam}</p>
+                        <p><strong>Email:</strong> {submission.email}</p>
+                        {f'<p><strong>Telefoon:</strong> {submission.telefoon}</p>' if submission.telefoon else ''}
+                    </div>
+                    
+                    <p>Heeft u dringende vragen? Neem gerust contact met ons op via <a href="mailto:info@coprivat.nl" style="color: #1e40af;">info@coprivat.nl</a> of bel ons op <a href="tel:+31612345678" style="color: #1e40af;">+31 6 1234 5678</a>.</p>
+                    
+                    <p style="color: #6b7280; font-size: 14px; margin-top: 30px; border-top: 1px solid #e5e7eb; padding-top: 20px;">
+                        Met vriendelijke groet,<br>
+                        <strong>Het CoPrivat Team</strong><br>
+                        <a href="https://corpivat.nl" style="color: #1e40af;">www.corpivat.nl</a>
+                    </p>
+                </div>
+            </body>
+            </html>
+            """
+            
+            # Plain text fallback
+            text_body = f"""
+            CoPrivat - Bericht Ontvangen
+            
+            Beste {submission.naam},
+            
+            Hartelijk dank voor uw bericht! We hebben uw contactverzoek ontvangen en zullen zo snel mogelijk contact met u opnemen.
+            
+            Uw bericht:
+            Onderwerp: {submission.onderwerp}
+            Bericht: {submission.bericht}
+            
+            Wat gebeurt er nu?
+            - We bekijken uw bericht zorgvuldig
+            - Een van onze teamleden neemt binnen 24 uur contact met u op
+            - We beantwoorden uw vragen over CoPrivat
+            
+            Contactgegevens:
+            Naam: {submission.naam}
+            Email: {submission.email}
+            {f'Telefoon: {submission.telefoon}' if submission.telefoon else ''}
+            
+            Heeft u dringende vragen? Neem gerust contact met ons op via info@coprivat.nl of bel ons op +31 6 1234 5678.
+            
+            Met vriendelijke groet,
+            Het CoPrivat Team
+            www.corpivat.nl
+            """
+            
+            # Stuur naar de gebruiker in plaats van admin
+            return await self._send_email_to_user(subject, html_body, text_body, submission.email)
+            
+        except Exception as e:
+            logger.error(f"Fout bij verzenden contact bevestigingsmail: {str(e)}")
+            return False
+    
     async def _send_email(self, subject: str, html_body: str, text_body: str) -> bool:
         """
         Verstuur email via SMTP

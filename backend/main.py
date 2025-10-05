@@ -109,16 +109,19 @@ async def submit_contact(submission: ContactSubmission):
         logger.info(f"Contact bericht ontvangen van: {submission.email}")
         
         # Stuur email naar admin
-        email_sent = await email_service.send_contact_notification(submission)
+        admin_email_sent = await email_service.send_contact_notification(submission)
         
-        if email_sent:
-            logger.info(f"Contact email succesvol verzonden voor: {submission.email}")
+        # Stuur bevestigingsmail naar gebruiker
+        user_email_sent = await email_service.send_contact_confirmation(submission)
+        
+        if admin_email_sent and user_email_sent:
+            logger.info(f"Contact emails succesvol verzonden voor: {submission.email}")
             return EmailResponse(
                 success=True,
-                message="Bericht succesvol verzonden. We nemen zo snel mogelijk contact met u op."
+                message="Bericht succesvol verzonden. U ontvangt een bevestigingsmail. We nemen zo snel mogelijk contact met u op."
             )
         else:
-            logger.error(f"Fout bij verzenden contact email voor: {submission.email}")
+            logger.error(f"Fout bij verzenden contact emails voor: {submission.email}")
             raise HTTPException(status_code=500, detail="Fout bij verzenden email")
             
     except Exception as e:
