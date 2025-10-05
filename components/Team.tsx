@@ -8,21 +8,21 @@ const Team = () => {
   const teamMembers = [
     {
       name: 'Christiaan Tromp',
-      role: 'CTO',
+      role: 'COO',
       description: 'Gepassioneerd over het stroomlijnen van administratieve processen in de zorg met innovatieve technologie.',
       avatarUrl: 'Christiaan PF.png',
       linkedinUrl: 'https://www.linkedin.com/in/christiaan-tromp-0145772bb/',
     },
     {
       name: 'Floris Revis',
-      role: ' SEO',
+      role: ' CEO',
       description: 'Stuurt de ontwikkeling van het product en vertaalt de behoeften van huisartsen naar praktische en gebruiksvriendelijke software-oplossingen.',
       avatarUrl: 'Floris PF.png',
       linkedinUrl: 'https://www.linkedin.com/in/floris-revis-448b95363/',
     },
     {
       name: 'Georg Tromp',
-      role: 'COO',
+      role: 'CTO',
       description: 'Software engineer gespecialiseerd in AI en machine learning, bouwt aan de kern van ons platform.',
       avatarUrl: 'Georg PF.png',
       linkedinUrl: 'https://www.linkedin.com/in/georg-tromp-83a1632bb/',

@@ -112,39 +112,39 @@ export default function Home() {
         <Header />
         
         {/* Eenvoudige Hero Sectie */}
-        <section className="bg-gradient-to-r from-blue-800 via-blue-300 to-gray-200 py-20">
+        <section className="bg-gradient-to-r from-blue-800 via-blue-300 to-gray-200 pt-8 pb-6 sm:pt-16 sm:pb-8 lg:py-20">
           <div className="container-max">
-            <div className="section-padding">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 {/* Tekst links */}
-                <div className="text-left text-white -ml-32">
+                <div className="text-center lg:text-left text-white lg:-ml-32 order-1 lg:order-1">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm mb-6 border border-white/30">
                     <span className="text-white text-sm font-medium">
                       ✨ AI-gedreven postverwerking
                     </span>
                   </div>
                   
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
                     <span className="text-white drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.4)'}}>Automatiseer</span> de{' '}
                     <span className="text-white drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.4)'}}>digitale post</span>{' '}
                     van uw <span className="text-white drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.4)'}}>huisartsenpraktijk</span>
                   </h1>
                   
-                  <p className="text-xl sm:text-2xl text-white mb-8 leading-relaxed">
+                  <p className="text-lg sm:text-xl md:text-2xl text-white mb-6 sm:mb-8 leading-relaxed px-2">
                     We bouwen momenteel actief aan ons product en betrekken huisartsen in het proces, 
                     zodat onze oplossing perfect aansluit op de praktijk.
                   </p>
                   
-                  <div className="flex items-center justify-start gap-6 flex-wrap">
+                  <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 flex-wrap">
                     <a
                       href="#product"
-                      className="px-8 py-4 rounded-full bg-transparent border-2 border-white text-white font-medium hover:bg-white hover:text-gray-800 shadow-lg"
+                      className="px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-transparent border-2 border-white text-white font-medium hover:bg-white hover:text-gray-800 shadow-lg text-sm sm:text-base"
                     >
                       Bekijk hoe het werkt
                     </a>
                     <a
                       href="/wachtlijst"
-                      className="px-8 py-4 rounded-full bg-white text-gray-800 font-semibold hover:bg-gray-100 shadow-lg hover:shadow-white/50 hover:shadow-2xl transition-all duration-300 border-2 border-blue-500"
+                      className="px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-white text-gray-800 font-semibold hover:bg-gray-100 shadow-lg hover:shadow-white/50 hover:shadow-2xl transition-all duration-300 border-2 border-blue-500 text-sm sm:text-base"
                       style={{boxShadow: '0 0 20px rgba(255,255,255,0.3)'}}
                     >
                       Join de wachtlijst
@@ -153,8 +153,8 @@ export default function Home() {
                 </div>
                 
                 {/* Video rechts */}
-                <div className="relative ml-20">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black/20 backdrop-blur-sm border border-white/20 w-[40rem]">
+                <div className="relative lg:ml-20 order-2 lg:order-2">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black/20 backdrop-blur-sm border border-white/20 w-full max-w-[40rem] mx-auto">
                     <video
                       className="w-full h-auto"
                       autoPlay

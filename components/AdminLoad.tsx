@@ -39,9 +39,9 @@ const AdminLoad = () => {
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
                  <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-xl px-8 py-7 border-l-4 border-blue-500 border border-blue-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                  {/* Badge half in/uit de unit */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                    <div className="bg-blue-600 text-white px-6 py-2 rounded-full font-bold text-sm">
+                  {/* Badge zweeft boven de kaartrand - iets lager voor betere uitlijning */}
+                  <div className="absolute -top-3 sm:-top-5 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="bg-blue-600 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm whitespace-nowrap shadow-lg">
                       GROOTSTE PROBLEEM
                     </div>
                   </div>
@@ -79,9 +79,9 @@ const AdminLoad = () => {
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
                 <div className="relative bg-gradient-to-br from-green-50 to-white rounded-xl px-8 pt-7 pb-12 border-l-4 border-green-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                  {/* Badge half in/uit de unit */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                    <div className="bg-green-300 text-white px-6 py-2 rounded-full font-bold text-sm">
+                  {/* Badge zweeft boven de kaartrand - iets lager voor betere uitlijning */}
+                  <div className="absolute -top-3 sm:-top-5 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="bg-green-300 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm whitespace-nowrap shadow-lg">
                       WAT WIJ OOK ZIEN
                     </div>
                   </div>
@@ -119,9 +119,9 @@ const AdminLoad = () => {
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
                 <div className="relative bg-gradient-to-br from-red-50 to-white rounded-xl px-8 pt-7 pb-12 border-l-4 border-red-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                  {/* Badge half in/uit de unit */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                    <div className="bg-red-300 text-white px-6 py-2 rounded-full font-bold text-sm">
+                  {/* Badge zweeft boven de kaartrand - iets lager voor betere uitlijning */}
+                  <div className="absolute -top-3 sm:-top-5 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="bg-red-300 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm whitespace-nowrap shadow-lg">
                       WAT WIJ OOK ZIEN
                     </div>
                   </div>
@@ -159,9 +159,9 @@ const AdminLoad = () => {
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-400/30 via-white/20 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/40 via-white/30 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
                 <div className="relative bg-gradient-to-br from-purple-50 to-white rounded-xl px-8 pt-7 pb-12 border-l-4 border-purple-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                  {/* Badge half in/uit de unit */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                    <div className="bg-purple-300 text-white px-6 py-2 rounded-full font-bold text-sm">
+                  {/* Badge zweeft boven de kaartrand - iets lager voor betere uitlijning */}
+                  <div className="absolute -top-3 sm:-top-5 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="bg-purple-300 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm whitespace-nowrap shadow-lg">
                       WAT WIJ OOK ZIEN
                     </div>
                   </div>
@@ -195,10 +195,10 @@ const AdminLoad = () => {
             </div>
 
             {/* Conclusie met nadruk op het probleem */}
-            <div className="bg-blue-100 rounded-xl p-8 border border-blue-200">
+            <div className="bg-blue-100 rounded-xl p-6 sm:p-8 border border-blue-200">
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-blue-800 mb-4">
-                  Het grootste probleem: Postverwerking
+                <h3 className="text-lg sm:text-2xl font-bold text-blue-800 mb-3 sm:mb-4 -mt-2 sm:mt-0">
+                  Het grootste probleem: <span className="whitespace-nowrap">Postverwerking</span>
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-lg max-w-4xl mx-auto">
                   Ondanks deze brede waaier aan administratieve verplichtingen, blijkt uit onderzoeken dat 

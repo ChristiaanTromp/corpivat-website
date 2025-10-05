@@ -46,7 +46,7 @@ const Product = () => {
     {
       number: 4,
       title: "Menselijke controle",
-      description: "De out wordt voorgelegd aan de huisarts voor controle",
+      description: "De output wordt voorgelegd aan de huisarts voor controle",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="10" stroke="#2563eb" strokeWidth="2" fill="none" />
@@ -111,9 +111,6 @@ const Product = () => {
             </div>
 
             <div className="mt-32">
-              <h3 className="text-xl font-bold text-gray-800 text-center mb-6">
-                Belangrijkste functies
-              </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
                   <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
