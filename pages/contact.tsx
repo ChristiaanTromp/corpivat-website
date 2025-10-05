@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Header from '../components/Header';
@@ -22,6 +22,32 @@ export default function Contact() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [countdown, setCountdown] = useState(5);
+
+  // Auto-close modal after 5 seconds with countdown
+  useEffect(() => {
+    if (showSuccessModal) {
+      setCountdown(5);
+      const timer = setInterval(() => {
+        setCountdown(prev => {
+          if (prev <= 1) {
+            setShowSuccessModal(false);
+            return 5;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+      return () => clearInterval(timer);
+    }
+  }, [showSuccessModal]);
+
+  // Close modal when clicking outside
+  const handleModalClose = (e) => {
+    if (e.target === e.currentTarget) {
+      setShowSuccessModal(false);
+    }
+  };
 
   // Input change handler
   const handleChange = (e) => {
@@ -99,8 +125,6 @@ export default function Contact() {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        setSubmitMessage(result.message);
-        
         // Reset form
         setFormData({
           naam: '',
@@ -109,6 +133,9 @@ export default function Contact() {
           onderwerp: '',
           bericht: ''
         });
+        
+        // Show success modal
+        setShowSuccessModal(true);
       } else {
         throw new Error(result.message || 'Er is een fout opgetreden');
       }
@@ -208,7 +235,7 @@ export default function Contact() {
                   {/* Telefoon veld (optioneel) */}
                   <div>
                     <label htmlFor="telefoon" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Telefoonnummer
+                      Telefoonnummer <span className="text-gray-400 font-normal">(optioneel)</span>
                     </label>
                     <input
                       type="tel"
@@ -218,7 +245,7 @@ export default function Contact() {
                       onChange={handleChange}
                       autoComplete="tel"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
-                      placeholder="06-12345678 (optioneel)"
+                      placeholder="06-12345678"
                     />
                   </div>
 
@@ -291,13 +318,9 @@ export default function Contact() {
                     </button>
                   </div>
 
-                  {/* Success/Error message */}
+                  {/* Error message */}
                   {submitMessage && (
-                    <div className={`mt-4 p-4 rounded-lg ${
-                      submitMessage.includes('Bedankt') 
-                        ? 'bg-green-50 text-green-800 border border-green-200' 
-                        : 'bg-red-50 text-red-800 border border-red-200'
-                    }`}>
+                    <div className="mt-4 p-4 rounded-lg bg-red-50 text-red-800 border border-red-200">
                       {submitMessage}
                     </div>
                   )}
@@ -338,6 +361,62 @@ export default function Contact() {
             </div>
           </div>
         </section>
+
+        {/* Success Modal */}
+        {showSuccessModal && (
+          <div 
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50"
+            onClick={handleModalClose}
+          >
+            <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-100">
+              <div className="p-8 text-center">
+                {/* Success Icon */}
+                <div className="mx-auto flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+                  <svg 
+                    className="w-8 h-8 text-green-600 animate-pulse" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={3} 
+                      d="M5 13l4 4L19 7" 
+                    />
+                  </svg>
+                </div>
+
+                {/* Success Message */}
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Bericht verzonden!
+                </h3>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Bedankt voor uw bericht. We hebben uw aanvraag ontvangen en nemen zo snel mogelijk contact met u op.
+                </p>
+                <p className="text-sm text-gray-500 mb-8">
+                  Deze pop-up sluit automatisch over {countdown} seconden
+                </p>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={() => setShowSuccessModal(false)}
+                    className="flex-1 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  >
+                    Sluiten
+                  </button>
+                  <Link
+                    href="/"
+                    className="flex-1 px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-colors duration-200 text-center focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                  >
+                    Terug naar home
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         <Footer />
       </div>

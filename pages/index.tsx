@@ -117,7 +117,7 @@ export default function Home() {
             <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 {/* Tekst links */}
-                <div className="text-center lg:text-left text-white lg:-ml-32 order-1 lg:order-1">
+                <div className="text-center lg:text-left text-white lg:-ml-16 order-1 lg:order-1">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm mb-6 border border-white/30">
                     <span className="text-white text-sm font-medium">
                       ✨ AI-gedreven postverwerking
@@ -153,8 +153,8 @@ export default function Home() {
                 </div>
                 
                 {/* Video rechts */}
-                <div className="relative lg:ml-20 order-2 lg:order-2">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black/20 backdrop-blur-sm border border-white/20 w-full max-w-[40rem] mx-auto">
+                <div className="relative lg:ml-8 order-2 lg:order-2">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black/20 backdrop-blur-sm border border-white/20 w-full max-w-[70rem] mx-auto">
                     <video
                       className="w-full h-auto"
                       autoPlay
