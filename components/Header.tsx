@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 /**
  * Header component met eenvoudige UI zonder zware animaties
@@ -7,6 +8,54 @@ import Link from 'next/link';
  */
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+
+  // Functie om naar sectie te scrollen
+  const scrollToSection = (sectionId: string) => {
+    if (router.pathname === '/') {
+      // Als we al op de homepage zijn, scroll direct naar de sectie
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
+    } else {
+      // Als we op een andere pagina zijn, ga naar homepage en scroll dan
+      router.push(`/#${sectionId}`);
+    }
+  };
+
+  // Effect om te scrollen naar sectie na navigatie
+  useEffect(() => {
+    const handleRouteChange = () => {
+      if (router.pathname === '/' && router.asPath.includes('#')) {
+        const hash = router.asPath.split('#')[1];
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 200);
+      }
+    };
+
+    // Ook direct checken bij mount
+    if (router.pathname === '/' && router.asPath.includes('#')) {
+      const hash = router.asPath.split('#')[1];
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 200);
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router]);
 
   return (
     <header className="bg-gradient-to-r from-blue-800 via-blue-300 to-gray-200 shadow-sm">
@@ -42,20 +91,20 @@ const Header = () => {
 
           {/* Desktop Navigation met moderne hover effecten - gecentreerd */}
           <nav className="hidden md:flex items-center space-x-1 absolute left-1/2 transform -translate-x-1/2">
-                   <Link 
-                     href="#product" 
+                   <button 
+                     onClick={() => scrollToSection('product')}
                      className="text-white hover:text-gray-200 text-sm font-medium px-3 py-2 rounded-full hover:bg-white/20"
                    >
                      Product
-                   </Link>
-                   <Link 
-                     href="#team" 
+                   </button>
+                   <button 
+                     onClick={() => scrollToSection('team')}
                      className="text-white hover:text-gray-200 text-sm font-medium px-3 py-2 rounded-full hover:bg-white/20"
                    >
                      Team
-                   </Link>
+                   </button>
                    <Link 
-                     href="#contact" 
+                     href="/contact" 
                      className="text-white hover:text-gray-200 text-sm font-medium px-3 py-2 rounded-full hover:bg-white/20"
                    >
                      Contact
@@ -85,29 +134,33 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden border-t border-white/20 bg-white/95 backdrop-blur-lg">
                <div className="px-1 py-0.5 space-y-0">
-                     <Link 
-                       href="#product" 
-                       className="block text-gray-800 hover:text-gray-600 hover:bg-gray-100 px-1 py-0.5 rounded-lg transition-all duration-200 text-xs font-medium"
-                       onClick={() => setIsMenuOpen(false)}
+                     <button 
+                       onClick={() => {
+                         scrollToSection('product');
+                         setIsMenuOpen(false);
+                       }}
+                       className="block text-gray-800 hover:text-gray-600 hover:bg-gray-100 px-1 py-0.5 rounded-lg transition-all duration-200 text-xs font-medium w-full text-left"
                      >
                        Product
-                     </Link>
-                     <Link 
-                       href="#team" 
-                       className="block text-gray-800 hover:text-gray-600 hover:bg-gray-100 px-1 py-0.5 rounded-lg transition-all duration-200 text-xs font-medium"
-                       onClick={() => setIsMenuOpen(false)}
+                     </button>
+                     <button 
+                       onClick={() => {
+                         scrollToSection('team');
+                         setIsMenuOpen(false);
+                       }}
+                       className="block text-gray-800 hover:text-gray-600 hover:bg-gray-100 px-1 py-0.5 rounded-lg transition-all duration-200 text-xs font-medium w-full text-left"
                      >
                        Team
-                     </Link>
+                     </button>
                      <Link 
-                       href="#contact" 
+                       href="/contact" 
                        className="block text-gray-800 hover:text-gray-600 hover:bg-gray-100 px-1 py-0.5 rounded-lg transition-all duration-200 text-xs font-medium"
                        onClick={() => setIsMenuOpen(false)}
                      >
                        Contact
                      </Link>
                      <Link 
-                       href="#contact" 
+                       href="/contact" 
                        className="block bg-gray-800 text-white hover:bg-gray-700 px-2 py-0.5 rounded-lg text-center text-xs font-semibold transition-all duration-200 shadow-sm hover:shadow-md mt-0.5"
                        onClick={() => setIsMenuOpen(false)}
                      >

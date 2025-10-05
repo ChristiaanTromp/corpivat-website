@@ -8,7 +8,7 @@
 @layer base {
   html {
     font-family: 'Inter', system-ui, sans-serif;
-    scroll-behavior: auto !important;
+    scroll-behavior: smooth;
     scroll-padding-top: 0;
     overflow-x: hidden;
     scroll-top: 0 !important;
@@ -16,7 +16,7 @@
   
   body {
     @apply text-gray-900 bg-white;
-    scroll-behavior: auto !important;
+    scroll-behavior: smooth;
     scroll-padding-top: 0;
     overflow-x: hidden;
     position: relative;
@@ -31,9 +31,9 @@
     scroll-top: 0 !important;
   }
   
-  /* Prevent any scroll restoration */
+  /* Allow smooth scrolling for navigation */
   * {
-    scroll-behavior: auto !important;
+    scroll-behavior: smooth;
   }
   
   /* Force initial scroll position */

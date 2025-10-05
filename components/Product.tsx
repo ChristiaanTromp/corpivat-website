@@ -12,11 +12,11 @@ const Product = () => {
       title: "Post ontvangst",
       description: "Alle digitale post wordt ontvangen en gescand",
       icon: (
-        <div className="relative">
+        <div className="relative animate-bounce">
           <svg className="w-8 h-8" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
-          <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+          <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center animate-pulse">
             7
           </div>
         </div>
