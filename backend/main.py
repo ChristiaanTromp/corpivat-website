@@ -81,16 +81,19 @@ async def submit_wachtlijst(submission: WachtlijstSubmission):
         logger.info(f"Wachtlijst aanmelding ontvangen van: {submission.email}")
         
         # Stuur email naar admin
-        email_sent = await email_service.send_wachtlijst_notification(submission)
+        admin_email_sent = await email_service.send_wachtlijst_notification(submission)
         
-        if email_sent:
-            logger.info(f"Wachtlijst email succesvol verzonden voor: {submission.email}")
+        # Stuur bevestigingsmail naar gebruiker
+        user_email_sent = await email_service.send_wachtlijst_confirmation(submission)
+        
+        if admin_email_sent and user_email_sent:
+            logger.info(f"Wachtlijst emails succesvol verzonden voor: {submission.email}")
             return EmailResponse(
                 success=True,
-                message="Aanmelding succesvol verwerkt. We nemen contact met u op zodra we starten met de pilot."
+                message="Aanmelding succesvol verwerkt. U ontvangt een bevestigingsmail. We nemen contact met u op zodra we starten met de pilot."
             )
         else:
-            logger.error(f"Fout bij verzenden wachtlijst email voor: {submission.email}")
+            logger.error(f"Fout bij verzenden wachtlijst emails voor: {submission.email}")
             raise HTTPException(status_code=500, detail="Fout bij verzenden email")
             
     except Exception as e:

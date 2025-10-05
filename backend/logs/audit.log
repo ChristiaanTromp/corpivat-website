@@ -58,3 +58,273 @@
 2025-10-05 14:34:21,157 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: georgtromp@gmail.com
 2025-10-05 14:34:21,810 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
 2025-10-05 14:34:21,810 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: georgtromp@gmail.com
+2025-10-05 14:37:24,047 - __main__ - INFO - Contact bericht ontvangen van: test@example.com
+2025-10-05 14:37:24,904 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 14:37:24,904 - __main__ - INFO - Contact email succesvol verzonden voor: test@example.com
+2025-10-05 14:37:24,922 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: test@huisartsenpraktijk.nl
+2025-10-05 14:37:25,466 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 14:37:25,467 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: test@huisartsenpraktijk.nl
+2025-10-05 14:38:23,169 - __main__ - INFO - Contact bericht ontvangen van: test@example.com
+2025-10-05 14:38:23,767 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 14:38:23,771 - __main__ - INFO - Contact email succesvol verzonden voor: test@example.com
+2025-10-05 14:38:23,787 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: test@huisartsenpraktijk.nl
+2025-10-05 14:38:24,335 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 14:38:24,335 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: test@huisartsenpraktijk.nl
+2025-10-05 14:39:27,429 - __main__ - INFO - Contact bericht ontvangen van: test@example.com
+2025-10-05 14:39:28,006 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 14:39:28,006 - __main__ - INFO - Contact email succesvol verzonden voor: test@example.com
+2025-10-05 14:39:50,817 - __main__ - INFO - Contact bericht ontvangen van: test@example.com
+2025-10-05 14:39:51,459 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 14:39:51,459 - __main__ - INFO - Contact email succesvol verzonden voor: test@example.com
+2025-10-05 14:40:06,573 - __main__ - INFO - Contact bericht ontvangen van: test@example.com
+2025-10-05 14:40:07,355 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 14:40:07,356 - __main__ - INFO - Contact email succesvol verzonden voor: test@example.com
+2025-10-05 14:40:16,457 - __main__ - INFO - Contact bericht ontvangen van: test@example.com
+2025-10-05 14:40:17,067 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 14:40:17,068 - __main__ - INFO - Contact email succesvol verzonden voor: test@example.com
+2025-10-05 14:41:21,379 - __main__ - INFO - Contact bericht ontvangen van: test@example.com
+2025-10-05 14:41:22,090 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 14:41:22,090 - __main__ - INFO - Contact email succesvol verzonden voor: test@example.com
+2025-10-05 14:41:27,414 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: test@huisartsenpraktijk.nl
+2025-10-05 14:41:27,998 - services.email_service - INFO - Email succesvol verzonden naar info@corpivat.nl
+2025-10-05 14:41:27,998 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: test@huisartsenpraktijk.nl
+2025-10-05 14:42:39,712 - __main__ - INFO - Contact bericht ontvangen van: test@example.com
+2025-10-05 14:42:40,246 - services.email_service - ERROR - Fout bij verzenden email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-b4c855585d1sm190398766b.67 - gsmtp')
+2025-10-05 14:42:40,246 - services.email_service - INFO - EMAIL FALLBACK - Content logged:
+2025-10-05 14:42:40,247 - services.email_service - INFO - To: info@coprivat.nl
+2025-10-05 14:42:40,247 - services.email_service - INFO - Subject: CoPrivat Contact Bericht - Test Bericht
+2025-10-05 14:42:40,247 - services.email_service - INFO - Content: 
+            Nieuw Contact Bericht - CoPrivat
+            
+            Contactgegevens:
+            Naam: Test Gebruiker
+            Email: test@example.com
+            Telefoon: 06-12345678
+            Onderwerp: Test Bericht
+            
+            Bericht:
+            Dit is een test bericht voor het contact formulier.
+            
+            Actie vereist: Beantwoord dit bericht zo snel mogelijk.
+            
+            Bericht ontvangen op: 05-10-2025 om 14:42
+            
+2025-10-05 14:42:40,247 - __main__ - INFO - Contact email succesvol verzonden voor: test@example.com
+2025-10-05 14:42:57,473 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: test@huisartsenpraktijk.nl
+2025-10-05 14:42:57,973 - services.email_service - ERROR - Fout bij verzenden email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 4fb4d7f45d1cf-6376b3aaf87sm7905740a12.4 - gsmtp')
+2025-10-05 14:42:57,973 - services.email_service - INFO - EMAIL FALLBACK - Content logged:
+2025-10-05 14:42:57,973 - services.email_service - INFO - To: info@coprivat.nl
+2025-10-05 14:42:57,973 - services.email_service - INFO - Subject: CoPrivat Wachtlijst Aanmelding - Dr. Test Arts
+2025-10-05 14:42:57,973 - services.email_service - INFO - Content: 
+            Nieuwe Wachtlijst Aanmelding - CoPrivat
+            
+            Contactgegevens:
+            Naam: Dr. Test Arts
+            Email: test@huisartsenpraktijk.nl
+            Telefoon: 06-98765432
+            Praktijk: Test Huisartsenpraktijk
+            
+            Actie vereist: Neem contact op met deze persoon zodra de pilot start.
+            
+            Aanmelding ontvangen op: 05-10-2025 om 14:42
+            
+2025-10-05 14:42:57,973 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: test@huisartsenpraktijk.nl
+2025-10-05 14:43:49,601 - __main__ - INFO - Contact bericht ontvangen van: christiaantromp@gmail.com
+2025-10-05 14:43:50,101 - services.email_service - ERROR - Fout bij verzenden email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-b486970b23csm907662366b.61 - gsmtp')
+2025-10-05 14:43:50,101 - services.email_service - INFO - EMAIL FALLBACK - Content logged:
+2025-10-05 14:43:50,101 - services.email_service - INFO - To: info@coprivat.nl
+2025-10-05 14:43:50,101 - services.email_service - INFO - Subject: CoPrivat Contact Bericht - Test Contact Formulier
+2025-10-05 14:43:50,101 - services.email_service - INFO - Content: 
+            Nieuw Contact Bericht - CoPrivat
+            
+            Contactgegevens:
+            Naam: Christiaan Tromp
+            Email: christiaantromp@gmail.com
+            Telefoon: 06-24965270
+            Onderwerp: Test Contact Formulier
+            
+            Bericht:
+            Dit is een test van het contact formulier om te controleren of de email correct wordt verzonden naar info@coprivat.nl
+            
+            Actie vereist: Beantwoord dit bericht zo snel mogelijk.
+            
+            Bericht ontvangen op: 05-10-2025 om 14:43
+            
+2025-10-05 14:43:50,101 - __main__ - INFO - Contact email succesvol verzonden voor: christiaantromp@gmail.com
+2025-10-05 14:44:01,840 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: christiaantromp@gmail.com
+2025-10-05 14:44:02,338 - services.email_service - ERROR - Fout bij verzenden email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-b4869b4e27dsm892023166b.70 - gsmtp')
+2025-10-05 14:44:02,338 - services.email_service - INFO - EMAIL FALLBACK - Content logged:
+2025-10-05 14:44:02,338 - services.email_service - INFO - To: info@coprivat.nl
+2025-10-05 14:44:02,338 - services.email_service - INFO - Subject: CoPrivat Wachtlijst Aanmelding - Dr. Christiaan Tromp
+2025-10-05 14:44:02,338 - services.email_service - INFO - Content: 
+            Nieuwe Wachtlijst Aanmelding - CoPrivat
+            
+            Contactgegevens:
+            Naam: Dr. Christiaan Tromp
+            Email: christiaantromp@gmail.com
+            Telefoon: 06-24965270
+            Praktijk: Test Huisartsenpraktijk
+            
+            Actie vereist: Neem contact op met deze persoon zodra de pilot start.
+            
+            Aanmelding ontvangen op: 05-10-2025 om 14:44
+            
+2025-10-05 14:44:02,338 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: christiaantromp@gmail.com
+2025-10-05 14:45:17,471 - __main__ - INFO - Contact bericht ontvangen van: test@example.com
+2025-10-05 14:45:17,993 - services.email_service - ERROR - Fout bij verzenden email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-b4c855585d1sm190885666b.67 - gsmtp')
+2025-10-05 14:45:17,993 - services.email_service - INFO - EMAIL FALLBACK - Content logged:
+2025-10-05 14:45:17,993 - services.email_service - INFO - To: info@coprivat.nl
+2025-10-05 14:45:17,993 - services.email_service - INFO - Subject: CoPrivat Contact Bericht - Test Bericht
+2025-10-05 14:45:17,993 - services.email_service - INFO - Content: 
+            Nieuw Contact Bericht - CoPrivat
+            
+            Contactgegevens:
+            Naam: Test Gebruiker
+            Email: test@example.com
+            Telefoon: 06-12345678
+            Onderwerp: Test Bericht
+            
+            Bericht:
+            Dit is een test bericht voor het contact formulier.
+            
+            Actie vereist: Beantwoord dit bericht zo snel mogelijk.
+            
+            Bericht ontvangen op: 05-10-2025 om 14:45
+            
+2025-10-05 14:45:17,993 - __main__ - INFO - Contact email succesvol verzonden voor: test@example.com
+2025-10-05 14:45:28,921 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: test@huisartsenpraktijk.nl
+2025-10-05 14:45:29,405 - services.email_service - ERROR - Fout bij verzenden email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-b4865a7c660sm899603566b.22 - gsmtp')
+2025-10-05 14:45:29,406 - services.email_service - INFO - EMAIL FALLBACK - Content logged:
+2025-10-05 14:45:29,406 - services.email_service - INFO - To: info@coprivat.nl
+2025-10-05 14:45:29,406 - services.email_service - INFO - Subject: CoPrivat Wachtlijst Aanmelding - Dr. Test Arts
+2025-10-05 14:45:29,406 - services.email_service - INFO - Content: 
+            Nieuwe Wachtlijst Aanmelding - CoPrivat
+            
+            Contactgegevens:
+            Naam: Dr. Test Arts
+            Email: test@huisartsenpraktijk.nl
+            Telefoon: 06-98765432
+            Praktijk: Test Huisartsenpraktijk
+            
+            Actie vereist: Neem contact op met deze persoon zodra de pilot start.
+            
+            Aanmelding ontvangen op: 05-10-2025 om 14:45
+            
+2025-10-05 14:45:29,406 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: test@huisartsenpraktijk.nl
+2025-10-05 14:46:19,188 - __main__ - INFO - Contact bericht ontvangen van: test@example.com
+2025-10-05 14:46:19,717 - services.email_service - ERROR - Fout bij verzenden email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 4fb4d7f45d1cf-6394bec298csm5270558a12.44 - gsmtp')
+2025-10-05 14:46:19,717 - services.email_service - INFO - EMAIL FALLBACK - Content logged:
+2025-10-05 14:46:19,717 - services.email_service - INFO - To: info@coprivat.nl
+2025-10-05 14:46:19,717 - services.email_service - INFO - Subject: CoPrivat Contact Bericht - Test Bericht
+2025-10-05 14:46:19,718 - services.email_service - INFO - Content: 
+            Nieuw Contact Bericht - CoPrivat
+            
+            Contactgegevens:
+            Naam: Test Gebruiker
+            Email: test@example.com
+            Telefoon: 06-12345678
+            Onderwerp: Test Bericht
+            
+            Bericht:
+            Dit is een test bericht na het oplossen van de foutmelding.
+            
+            Actie vereist: Beantwoord dit bericht zo snel mogelijk.
+            
+            Bericht ontvangen op: 05-10-2025 om 14:46
+            
+2025-10-05 14:46:19,718 - __main__ - INFO - Contact email succesvol verzonden voor: test@example.com
+2025-10-05 15:01:45,706 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: test@example.com
+2025-10-05 15:01:46,250 - services.email_service - ERROR - Fout bij verzenden email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 4fb4d7f45d1cf-6397c9355c3sm1804780a12.0 - gsmtp')
+2025-10-05 15:01:46,250 - services.email_service - INFO - EMAIL FALLBACK - Content logged:
+2025-10-05 15:01:46,250 - services.email_service - INFO - To: info@coprivat.nl
+2025-10-05 15:01:46,251 - services.email_service - INFO - Subject: CoPrivat Wachtlijst Aanmelding - Test
+2025-10-05 15:01:46,251 - services.email_service - INFO - Content: 
+            Nieuwe Wachtlijst Aanmelding - CoPrivat
+            
+            Contactgegevens:
+            Naam: Test
+            Email: test@example.com
+            
+            
+            
+            Actie vereist: Neem contact op met deze persoon zodra de pilot start.
+            
+            Aanmelding ontvangen op: 05-10-2025 om 15:01
+            
+2025-10-05 15:01:46,251 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: test@example.com
+2025-10-05 15:05:14,467 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: test@example.com
+2025-10-05 15:05:15,004 - services.email_service - ERROR - Fout bij verzenden email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-b4865a7c660sm903396566b.22 - gsmtp')
+2025-10-05 15:05:15,004 - services.email_service - INFO - EMAIL FALLBACK - Content logged:
+2025-10-05 15:05:15,004 - services.email_service - INFO - To: info@coprivat.nl
+2025-10-05 15:05:15,004 - services.email_service - INFO - Subject: CoPrivat Wachtlijst Aanmelding - Test User
+2025-10-05 15:05:15,004 - services.email_service - INFO - Content: 
+            Nieuwe Wachtlijst Aanmelding - CoPrivat
+            
+            Contactgegevens:
+            Naam: Test User
+            Email: test@example.com
+            Telefoon: 0612345678
+            Praktijk: Test Praktijk
+            
+            Actie vereist: Neem contact op met deze persoon zodra de pilot start.
+            
+            Aanmelding ontvangen op: 05-10-2025 om 15:05
+            
+2025-10-05 15:05:15,004 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: test@example.com
+2025-10-05 15:05:42,386 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: georgtromp@gmail.com
+2025-10-05 15:05:42,888 - services.email_service - ERROR - Fout bij verzenden email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-b48652aa04bsm913472666b.6 - gsmtp')
+2025-10-05 15:05:42,889 - services.email_service - INFO - EMAIL FALLBACK - Content logged:
+2025-10-05 15:05:42,889 - services.email_service - INFO - To: info@coprivat.nl
+2025-10-05 15:05:42,889 - services.email_service - INFO - Subject: CoPrivat Wachtlijst Aanmelding - Georg Tromp
+2025-10-05 15:05:42,889 - services.email_service - INFO - Content: 
+            Nieuwe Wachtlijst Aanmelding - CoPrivat
+            
+            Contactgegevens:
+            Naam: Georg Tromp
+            Email: georgtromp@gmail.com
+            Telefoon: +31651560103
+            
+            
+            Actie vereist: Neem contact op met deze persoon zodra de pilot start.
+            
+            Aanmelding ontvangen op: 05-10-2025 om 15:05
+            
+2025-10-05 15:05:42,889 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: georgtromp@gmail.com
+2025-10-05 15:07:08,790 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: test@example.com
+2025-10-05 15:07:09,515 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:07:09,515 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: test@example.com
+2025-10-05 15:07:39,809 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: georgtromp@gmail.com
+2025-10-05 15:07:40,373 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:07:40,373 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: georgtromp@gmail.com
+2025-10-05 15:09:41,531 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: christiaanctromp@gmail.com
+2025-10-05 15:09:42,076 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:09:42,076 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: christiaanctromp@gmail.com
+2025-10-05 15:13:24,797 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: test@gmail.com
+2025-10-05 15:13:25,346 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:13:25,346 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: test@gmail.com
+2025-10-05 15:14:06,724 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: christiaanctromp@gmail.com
+2025-10-05 15:14:07,291 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:14:07,291 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: christiaanctromp@gmail.com
+2025-10-05 15:14:26,171 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: christiaanctromp@gmail.com
+2025-10-05 15:14:26,800 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:14:26,801 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: christiaanctromp@gmail.com
+2025-10-05 15:14:47,722 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: christiaanctromp@gmail.com
+2025-10-05 15:14:48,269 - services.email_service - INFO - Email succesvol verzonden naar christiaanctromp@gmail.com
+2025-10-05 15:14:48,269 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: christiaanctromp@gmail.com
+2025-10-05 15:18:05,697 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: test@example.com
+2025-10-05 15:18:06,233 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:18:06,233 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: test@example.com
+2025-10-05 15:18:41,906 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: christiaanctromp@gmail.com
+2025-10-05 15:18:42,480 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:18:42,480 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: christiaanctromp@gmail.com
+2025-10-05 15:19:06,252 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: georgtromp@gmail.com
+2025-10-05 15:19:06,900 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:19:06,901 - __main__ - INFO - Wachtlijst email succesvol verzonden voor: georgtromp@gmail.com
+2025-10-05 15:20:58,574 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: christiaanctromp@gmail.com
+2025-10-05 15:20:59,288 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:20:59,848 - services.email_service - INFO - User email succesvol verzonden naar christiaanctromp@gmail.com
+2025-10-05 15:20:59,848 - __main__ - INFO - Wachtlijst emails succesvol verzonden voor: christiaanctromp@gmail.com
+2025-10-05 15:21:23,639 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: georgtromp@gmail.com
+2025-10-05 15:21:27,716 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:21:29,643 - services.email_service - INFO - User email succesvol verzonden naar georgtromp@gmail.com
+2025-10-05 15:21:29,643 - __main__ - INFO - Wachtlijst emails succesvol verzonden voor: georgtromp@gmail.com
