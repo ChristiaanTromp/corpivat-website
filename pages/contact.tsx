@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { emailService, ContactFormData } from '../services/emailService';
 
 /**
  * Contact pagina component
@@ -113,10 +114,76 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // Direct fallback naar mailto link (API server bestaat nog niet)
-      console.log('Gebruik mailto fallback voor contact formulier');
+      console.log('Verstuur contact emails via EmailJS');
       
-      // Fallback: Stuur email via mailto link
+      // Verstuur emails via EmailJS
+      const result = await emailService.sendContactEmails(formData as ContactFormData);
+      
+      if (result.admin && result.customer) {
+        // Beide emails succesvol verzonden
+        console.log('Contact emails succesvol verzonden');
+        
+        // Reset form
+        setFormData({
+          naam: '',
+          email: '',
+          telefoon: '',
+          onderwerp: '',
+          bericht: ''
+        });
+        
+        // Show success modal
+        setShowSuccessModal(true);
+      } else if (result.admin || result.customer) {
+        // Minstens één email verzonden
+        console.log('Gedeeltelijk succesvol:', result);
+        
+        // Reset form
+        setFormData({
+          naam: '',
+          email: '',
+          telefoon: '',
+          onderwerp: '',
+          bericht: ''
+        });
+        
+        // Show success modal
+        setShowSuccessModal(true);
+      } else {
+        // Geen emails verzonden, gebruik fallback
+        console.warn('EmailJS gefaald, gebruik mailto fallback');
+        
+        // Fallback: Stuur email via mailto link
+        const subject = encodeURIComponent(`CoPrivat Contact: ${formData.onderwerp}`);
+        const body = encodeURIComponent(`
+Naam: ${formData.naam}
+Email: ${formData.email}
+Telefoon: ${formData.telefoon || 'Niet opgegeven'}
+Onderwerp: ${formData.onderwerp}
+
+Bericht:
+${formData.bericht}
+        `);
+        
+        // Open mailto link
+        window.open(`mailto:info@coprivat.nl?subject=${subject}&body=${body}`, '_blank');
+        
+        // Reset form
+        setFormData({
+          naam: '',
+          email: '',
+          telefoon: '',
+          onderwerp: '',
+          bericht: ''
+        });
+        
+        // Show success modal
+        setShowSuccessModal(true);
+      }
+    } catch (error) {
+      console.error('Fout bij verzenden bericht:', error);
+      
+      // Fallback bij error
       const subject = encodeURIComponent(`CoPrivat Contact: ${formData.onderwerp}`);
       const body = encodeURIComponent(`
 Naam: ${formData.naam}
@@ -128,7 +195,6 @@ Bericht:
 ${formData.bericht}
       `);
       
-      // Open mailto link
       window.open(`mailto:info@coprivat.nl?subject=${subject}&body=${body}`, '_blank');
       
       // Reset form
@@ -142,10 +208,6 @@ ${formData.bericht}
       
       // Show success modal
       setShowSuccessModal(true);
-    } catch (error) {
-      console.error('Fout bij verzenden bericht:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Onbekende fout';
-      setSubmitMessage(`Er is een fout opgetreden: ${errorMessage}. Probeer het later opnieuw.`);
     } finally {
       setIsSubmitting(false);
     }
@@ -396,7 +458,7 @@ ${formData.bericht}
                   Bericht verzonden!
                 </h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Bedankt voor uw bericht. Er wordt nu een email client geopend waar u uw bericht kunt verzenden naar info@coprivat.nl.
+                  Bedankt voor uw bericht! We hebben uw bericht ontvangen en u ontvangt een bevestigingsmail. We nemen zo snel mogelijk contact met u op.
                 </p>
                 <p className="text-sm text-gray-500 mb-8">
                   Deze pop-up sluit automatisch over {countdown} seconden
