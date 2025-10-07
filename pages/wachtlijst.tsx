@@ -87,9 +87,7 @@ export default function Wachtlijst() {
 
     try {
       // Probeer eerst API call naar backend
-      const apiUrl = typeof window !== 'undefined' && window.location.hostname === 'coprivat.nl'
-        ? 'https://api.coprivat.nl/api/wachtlijst'
-        : 'http://localhost:8000/api/wachtlijst';
+      const apiUrl = 'https://api.coprivat.nl/api/wachtlijst';
         
       try {
         const response = await fetch(apiUrl, {

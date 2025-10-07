@@ -114,9 +114,7 @@ export default function Contact() {
     
     try {
       // Probeer eerst API call naar backend
-      const apiUrl = typeof window !== 'undefined' && window.location.hostname === 'coprivat.nl'
-        ? 'https://api.coprivat.nl/api/contact'
-        : 'http://localhost:8000/api/contact';
+      const apiUrl = 'https://api.coprivat.nl/api/contact';
         
       try {
         const response = await fetch(apiUrl, {
