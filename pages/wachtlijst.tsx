@@ -86,47 +86,25 @@ export default function Wachtlijst() {
     setIsSubmitting(true);
 
     try {
-      // Probeer eerst API call naar backend
-      const apiUrl = 'https://api.coprivat.nl/api/wachtlijst';
-        
-      try {
-        const response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-
-        const result = await response.json();
-
-        if (response.ok && result.success) {
-          setIsSubmitted(true);
-          console.log('Wachtlijst aanmelding succesvol:', result);
-          return;
-        } else {
-          throw new Error(result.message || 'API fout');
-        }
-      } catch (apiError) {
-        console.warn('API niet beschikbaar, gebruik fallback:', apiError);
-        
-        // Fallback: Stuur email via mailto link
-        const subject = encodeURIComponent('CoPrivat Wachtlijst Aanmelding');
-        const body = encodeURIComponent(`
+      // Direct fallback naar mailto link (API server bestaat nog niet)
+      console.log('Gebruik mailto fallback voor wachtlijst formulier');
+      
+      // Fallback: Stuur email via mailto link
+      const subject = encodeURIComponent('CoPrivat Wachtlijst Aanmelding');
+      const body = encodeURIComponent(`
 Naam: ${formData.naam}
 Email: ${formData.email}
 Telefoon: ${formData.telefoon || 'Niet opgegeven'}
 Praktijk: ${formData.praktijk || 'Niet opgegeven'}
 
 Ik wil graag op de wachtlijst voor CoPrivat.
-        `);
-        
-        // Open mailto link
-        window.open(`mailto:info@coprivat.nl?subject=${subject}&body=${body}`, '_blank');
-        
-        // Mark as submitted
-        setIsSubmitted(true);
-      }
+      `);
+      
+      // Open mailto link
+      window.open(`mailto:info@coprivat.nl?subject=${subject}&body=${body}`, '_blank');
+      
+      // Mark as submitted
+      setIsSubmitted(true);
     } catch (error) {
       console.error('Fout bij aanmelden:', error);
       const errorMessage = error instanceof Error ? error.message : 'Onbekende fout';
