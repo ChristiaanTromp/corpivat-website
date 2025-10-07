@@ -113,18 +113,56 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // API call naar backend
-      const response = await fetch('http://localhost:8000/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // Probeer eerst API call naar backend
+      const apiUrl = process.env.NODE_ENV === 'production' 
+        ? 'https://api.coprivat.nl/api/contact'
+        : 'http://localhost:8000/api/contact';
+        
+      try {
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
 
-      const result = await response.json();
+        const result = await response.json();
 
-      if (response.ok && result.success) {
+        if (response.ok && result.success) {
+          // Reset form
+          setFormData({
+            naam: '',
+            email: '',
+            telefoon: '',
+            onderwerp: '',
+            bericht: ''
+          });
+          
+          // Show success modal
+          setShowSuccessModal(true);
+          return;
+        } else {
+          throw new Error(result.message || 'API fout');
+        }
+      } catch (apiError) {
+        console.warn('API niet beschikbaar, gebruik fallback:', apiError);
+        
+        // Fallback: Stuur email via mailto link
+        const subject = encodeURIComponent(`CoPrivat Contact: ${formData.onderwerp}`);
+        const body = encodeURIComponent(`
+Naam: ${formData.naam}
+Email: ${formData.email}
+Telefoon: ${formData.telefoon || 'Niet opgegeven'}
+Onderwerp: ${formData.onderwerp}
+
+Bericht:
+${formData.bericht}
+        `);
+        
+        // Open mailto link
+        window.open(`mailto:info@coprivat.nl?subject=${subject}&body=${body}`, '_blank');
+        
         // Reset form
         setFormData({
           naam: '',
@@ -136,8 +174,6 @@ export default function Contact() {
         
         // Show success modal
         setShowSuccessModal(true);
-      } else {
-        throw new Error(result.message || 'Er is een fout opgetreden');
       }
     } catch (error) {
       console.error('Fout bij verzenden bericht:', error);
@@ -393,7 +429,7 @@ export default function Contact() {
                   Bericht verzonden!
                 </h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Bedankt voor uw bericht. We hebben uw aanvraag ontvangen en nemen zo snel mogelijk contact met u op.
+                  Bedankt voor uw bericht. Er wordt nu een email client geopend waar u uw bericht kunt verzenden naar info@coprivat.nl.
                 </p>
                 <p className="text-sm text-gray-500 mb-8">
                   Deze pop-up sluit automatisch over {countdown} seconden

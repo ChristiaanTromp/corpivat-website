@@ -86,22 +86,48 @@ export default function Wachtlijst() {
     setIsSubmitting(true);
 
     try {
-      // API call naar backend
-      const response = await fetch('http://localhost:8000/api/wachtlijst', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // Probeer eerst API call naar backend
+      const apiUrl = process.env.NODE_ENV === 'production' 
+        ? 'https://api.coprivat.nl/api/wachtlijst'
+        : 'http://localhost:8000/api/wachtlijst';
+        
+      try {
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
 
-      const result = await response.json();
+        const result = await response.json();
 
-      if (response.ok && result.success) {
+        if (response.ok && result.success) {
+          setIsSubmitted(true);
+          console.log('Wachtlijst aanmelding succesvol:', result);
+          return;
+        } else {
+          throw new Error(result.message || 'API fout');
+        }
+      } catch (apiError) {
+        console.warn('API niet beschikbaar, gebruik fallback:', apiError);
+        
+        // Fallback: Stuur email via mailto link
+        const subject = encodeURIComponent('CoPrivat Wachtlijst Aanmelding');
+        const body = encodeURIComponent(`
+Naam: ${formData.naam}
+Email: ${formData.email}
+Telefoon: ${formData.telefoon || 'Niet opgegeven'}
+Praktijk: ${formData.praktijk || 'Niet opgegeven'}
+
+Ik wil graag op de wachtlijst voor CoPrivat.
+        `);
+        
+        // Open mailto link
+        window.open(`mailto:info@coprivat.nl?subject=${subject}&body=${body}`, '_blank');
+        
+        // Mark as submitted
         setIsSubmitted(true);
-        console.log('Wachtlijst aanmelding succesvol:', result);
-      } else {
-        throw new Error(result.message || 'Er is een fout opgetreden');
       }
     } catch (error) {
       console.error('Fout bij aanmelden:', error);
@@ -265,7 +291,7 @@ export default function Wachtlijst() {
                         Aanmelding gelukt!
                       </h2>
                       <p className="text-gray-600 mb-6">
-                        Bedankt voor je interesse in CoPrivat. We nemen contact met uw op zodra we starten met de pilot.
+                        Bedankt voor je interesse in CoPrivat. Er wordt nu een email client geopend waar u uw aanmelding kunt verzenden naar info@coprivat.nl.
                       </p>
                     </div>
                     
