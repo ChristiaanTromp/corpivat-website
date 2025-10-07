@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { getFullApiUrl, API_ENDPOINTS } from '../lib/api';
 
 /**
  * Contact pagina component
@@ -114,7 +115,7 @@ export default function Contact() {
     
     try {
       // API call naar backend
-      const response = await fetch('https://api.coprivat.nl/api/contact', {
+      const response = await fetch(getFullApiUrl(API_ENDPOINTS.CONTACT), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { getFullApiUrl, API_ENDPOINTS } from '../lib/api';
 
 /**
  * Wachtlijst pagina component
@@ -87,7 +88,7 @@ export default function Wachtlijst() {
 
     try {
       // API call naar backend
-      const response = await fetch('https://api.coprivat.nl/api/wachtlijst', {
+      const response = await fetch(getFullApiUrl(API_ENDPOINTS.WACHTLIJST), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
