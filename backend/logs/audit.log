@@ -328,3 +328,115 @@
 2025-10-05 15:21:27,716 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
 2025-10-05 15:21:29,643 - services.email_service - INFO - User email succesvol verzonden naar georgtromp@gmail.com
 2025-10-05 15:21:29,643 - __main__ - INFO - Wachtlijst emails succesvol verzonden voor: georgtromp@gmail.com
+2025-10-05 15:23:37,686 - __main__ - INFO - Contact bericht ontvangen van: georgtromp@gmail.com
+2025-10-05 15:23:39,860 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:23:39,860 - __main__ - INFO - Contact email succesvol verzonden voor: georgtromp@gmail.com
+2025-10-05 15:30:58,026 - __main__ - INFO - Contact bericht ontvangen van: christiaanctromp@gmail.com
+2025-10-05 15:30:58,551 - services.email_service - INFO - Email succesvol verzonden naar info@coprivat.nl
+2025-10-05 15:30:59,267 - services.email_service - INFO - User email succesvol verzonden naar christiaanctromp@gmail.com
+2025-10-05 15:30:59,268 - __main__ - INFO - Contact emails succesvol verzonden voor: christiaanctromp@gmail.com
+2025-10-05 19:06:03,538 - __main__ - INFO - Wachtlijst aanmelding ontvangen van: test@example.com
+2025-10-05 19:06:07,538 - services.email_service - ERROR - Fout bij verzenden email: (535, b'5.7.8 Error: authentication failed: (reason unavailable)')
+2025-10-05 19:06:07,538 - services.email_service - INFO - EMAIL FALLBACK - Content logged:
+2025-10-05 19:06:07,538 - services.email_service - INFO - To: info@corpivat.nl
+2025-10-05 19:06:07,538 - services.email_service - INFO - Subject: CoPrivat Wachtlijst Aanmelding - Test User
+2025-10-05 19:06:07,538 - services.email_service - INFO - Content: 
+            Nieuwe Wachtlijst Aanmelding - CoPrivat
+            
+            Contactgegevens:
+            Naam: Test User
+            Email: test@example.com
+            Telefoon: 0612345678
+            Praktijk: Test Praktijk
+            
+            Actie vereist: Neem contact op met deze persoon zodra de pilot start.
+            
+            Aanmelding ontvangen op: 05-10-2025 om 19:06
+            
+2025-10-05 19:06:11,533 - services.email_service - ERROR - Fout bij verzenden user email: (535, b'5.7.8 Error: authentication failed: (reason unavailable)')
+2025-10-05 19:06:11,534 - services.email_service - INFO - USER EMAIL FALLBACK - Content logged:
+2025-10-05 19:06:11,534 - services.email_service - INFO - To: test@example.com
+2025-10-05 19:06:11,534 - services.email_service - INFO - Subject: Aanmelding Wachtlijst Bevestigd - CoPrivat
+2025-10-05 19:06:11,534 - services.email_service - INFO - Content: 
+            CoPrivat - Aanmelding Wachtlijst Bevestigd
+            
+            Beste Test User,
+            
+            Hartelijk dank voor uw aanmelding voor de CoPrivat wachtlijst! Uw interesse in onze AI-gedreven software voor de verwerking van digitale post in huisartsenpraktijken wordt zeer gewaardeerd.
+            
+            Uw aanmelding:
+            Naam: Test User
+            Email: test@example.com
+            Telefoon: 0612345678
+            Praktijk: Test Praktijk
+            
+            Wat gebeurt er nu?
+            - U staat op de wachtlijst voor de CoPrivat pilot
+            - We nemen contact met u op zodra we starten met de pilot
+            - U ontvangt updates over de ontwikkeling van CoPrivat
+            
+            Heeft u vragen? Neem gerust contact met ons op via info@coprivat.nl
+            
+            Met vriendelijke groet,
+            Het CoPrivat Team
+            www.corpivat.nl
+            
+2025-10-05 19:06:11,534 - __main__ - INFO - Wachtlijst emails succesvol verzonden voor: test@example.com
+2025-10-05 19:06:16,438 - __main__ - INFO - Contact bericht ontvangen van: test@example.com
+2025-10-05 19:06:20,541 - services.email_service - ERROR - Fout bij verzenden email: (535, b'5.7.8 Error: authentication failed: (reason unavailable)')
+2025-10-05 19:06:20,542 - services.email_service - INFO - EMAIL FALLBACK - Content logged:
+2025-10-05 19:06:20,542 - services.email_service - INFO - To: info@corpivat.nl
+2025-10-05 19:06:20,542 - services.email_service - INFO - Subject: CoPrivat Contact Bericht - Test
+2025-10-05 19:06:20,542 - services.email_service - INFO - Content: 
+            Nieuw Contact Bericht - CoPrivat
+            
+            Contactgegevens:
+            Naam: Test User
+            Email: test@example.com
+            Telefoon: 0612345678
+            Onderwerp: Test
+            
+            Bericht:
+            Dit is een test bericht
+            
+            Actie vereist: Beantwoord dit bericht zo snel mogelijk.
+            
+            Bericht ontvangen op: 05-10-2025 om 19:06
+            
+2025-10-05 19:06:24,467 - services.email_service - ERROR - Fout bij verzenden user email: (535, b'5.7.8 Error: authentication failed: (reason unavailable)')
+2025-10-05 19:06:24,469 - services.email_service - INFO - USER EMAIL FALLBACK - Content logged:
+2025-10-05 19:06:24,470 - services.email_service - INFO - To: test@example.com
+2025-10-05 19:06:24,470 - services.email_service - INFO - Subject: Bericht Ontvangen - CoPrivat
+2025-10-05 19:06:24,470 - services.email_service - INFO - Content: 
+            CoPrivat - Bericht Ontvangen
+            
+            Beste Test User,
+            
+            Hartelijk dank voor uw bericht! We hebben uw contactverzoek ontvangen en zullen zo snel mogelijk contact met u opnemen.
+            
+            Uw bericht:
+            Onderwerp: Test
+            Bericht: Dit is een test bericht
+            
+            Wat gebeurt er nu?
+            - We bekijken uw bericht zorgvuldig
+            - Een van onze teamleden neemt binnen 24 uur contact met u op
+            - We beantwoorden uw vragen over CoPrivat
+            
+            Contactgegevens:
+            Naam: Test User
+            Email: test@example.com
+            Telefoon: 0612345678
+            
+            Heeft u dringende vragen? Neem gerust contact met ons op via info@coprivat.nl of bel ons op +31 6 1234 5678.
+            
+            Met vriendelijke groet,
+            Het CoPrivat Team
+            www.corpivat.nl
+            
+2025-10-05 19:06:24,470 - __main__ - INFO - Contact emails succesvol verzonden voor: test@example.com
+2025-10-05 20:15:44,700 - __main__ - INFO - Email processing gestart voor: patient@test.com
+2025-10-05 20:15:44,701 - __main__ - INFO - Mock: Email added with ID: email_1
+2025-10-05 20:15:44,701 - __main__ - INFO - Email succesvol opgeslagen in Firebase met ID: email_1
+2025-10-05 20:15:51,860 - __main__ - INFO - Retrieved 1 emails
+2025-10-05 20:16:06,649 - __main__ - INFO - Email email_1 status updated to approved
