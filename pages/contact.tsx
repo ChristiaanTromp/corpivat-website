@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { emailService, ContactFormData } from '../services/emailService';
 
 /**
  * Contact pagina component
@@ -114,30 +113,18 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      console.log('Verstuur contact emails via EmailJS');
-      
-      // Verstuur emails via EmailJS
-      const result = await emailService.sendContactEmails(formData as ContactFormData);
-      
-      if (result.admin && result.customer) {
-        // Beide emails succesvol verzonden
-        console.log('Contact emails succesvol verzonden');
-        
-        // Reset form
-        setFormData({
-          naam: '',
-          email: '',
-          telefoon: '',
-          onderwerp: '',
-          bericht: ''
-        });
-        
-        // Show success modal
-        setShowSuccessModal(true);
-      } else if (result.admin || result.customer) {
-        // Minstens één email verzonden
-        console.log('Gedeeltelijk succesvol:', result);
-        
+      // API call naar backend
+      const response = await fetch('https://api.coprivat.nl/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         // Reset form
         setFormData({
           naam: '',
@@ -150,64 +137,12 @@ export default function Contact() {
         // Show success modal
         setShowSuccessModal(true);
       } else {
-        // Geen emails verzonden, gebruik fallback
-        console.warn('EmailJS gefaald, gebruik mailto fallback');
-        
-        // Fallback: Stuur email via mailto link
-        const subject = encodeURIComponent(`CoPrivat Contact: ${formData.onderwerp}`);
-        const body = encodeURIComponent(`
-Naam: ${formData.naam}
-Email: ${formData.email}
-Telefoon: ${formData.telefoon || 'Niet opgegeven'}
-Onderwerp: ${formData.onderwerp}
-
-Bericht:
-${formData.bericht}
-        `);
-        
-        // Open mailto link
-        window.open(`mailto:info@coprivat.nl?subject=${subject}&body=${body}`, '_blank');
-        
-        // Reset form
-        setFormData({
-          naam: '',
-          email: '',
-          telefoon: '',
-          onderwerp: '',
-          bericht: ''
-        });
-        
-        // Show success modal
-        setShowSuccessModal(true);
+        throw new Error(result.message || 'Er is een fout opgetreden');
       }
     } catch (error) {
       console.error('Fout bij verzenden bericht:', error);
-      
-      // Fallback bij error
-      const subject = encodeURIComponent(`CoPrivat Contact: ${formData.onderwerp}`);
-      const body = encodeURIComponent(`
-Naam: ${formData.naam}
-Email: ${formData.email}
-Telefoon: ${formData.telefoon || 'Niet opgegeven'}
-Onderwerp: ${formData.onderwerp}
-
-Bericht:
-${formData.bericht}
-      `);
-      
-      window.open(`mailto:info@coprivat.nl?subject=${subject}&body=${body}`, '_blank');
-      
-      // Reset form
-      setFormData({
-        naam: '',
-        email: '',
-        telefoon: '',
-        onderwerp: '',
-        bericht: ''
-      });
-      
-      // Show success modal
-      setShowSuccessModal(true);
+      const errorMessage = error instanceof Error ? error.message : 'Onbekende fout';
+      setSubmitMessage(`Er is een fout opgetreden: ${errorMessage}. Probeer het later opnieuw.`);
     } finally {
       setIsSubmitting(false);
     }
@@ -458,7 +393,7 @@ ${formData.bericht}
                   Bericht verzonden!
                 </h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Bedankt voor uw bericht! We hebben uw bericht ontvangen en u ontvangt een bevestigingsmail. We nemen zo snel mogelijk contact met u op.
+                  Bedankt voor uw bericht. We hebben uw aanvraag ontvangen en nemen zo snel mogelijk contact met u op.
                 </p>
                 <p className="text-sm text-gray-500 mb-8">
                   Deze pop-up sluit automatisch over {countdown} seconden

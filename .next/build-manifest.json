@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/_sjooef9sGpunBN2wRPSJ/_buildManifest.js",
-    "static/_sjooef9sGpunBN2wRPSJ/_ssgManifest.js"
+    "static/V4kGZl6xmJGaAL8e6U3bH/_buildManifest.js",
+    "static/V4kGZl6xmJGaAL8e6U3bH/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -37,8 +37,7 @@
       "static/chunks/main-6ee8e0c31cfead9d.js",
       "static/chunks/814-a19470f784543fc5.js",
       "static/chunks/534-0229fbf02bcbc453.js",
-      "static/chunks/64-2d7c9996b1edceb3.js",
-      "static/chunks/pages/contact-27bf4b86d4a77402.js"
+      "static/chunks/pages/contact-aaa37f0bf9389e78.js"
     ],
     "/wachtlijst": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -46,8 +45,7 @@
       "static/chunks/main-6ee8e0c31cfead9d.js",
       "static/chunks/814-a19470f784543fc5.js",
       "static/chunks/534-0229fbf02bcbc453.js",
-      "static/chunks/64-2d7c9996b1edceb3.js",
-      "static/chunks/pages/wachtlijst-44a2d762ff458e39.js"
+      "static/chunks/pages/wachtlijst-e0fcd8ed75ca0a61.js"
     ]
   },
   "ampFirstPages": []
