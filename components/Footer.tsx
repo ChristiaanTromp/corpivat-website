@@ -55,7 +55,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link href="#contact" className="text-white hover:text-gray-200 transition-colors text-sm">
-                    Contact
+                    Contacts
                   </Link>
                 </li>
               </ul>
